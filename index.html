@@ -20,7 +20,7 @@
       padding: 0;
       font-family: 'Roboto', sans-serif;
     }
-    
+
     /* Sfondo principale */
     main {
       background-image: url('sfondo1.jpg'); /* metti la tua immagine qui */
@@ -31,15 +31,16 @@
       position: relative;
     }
 
-    /* Aggiungi il testo in basso a destra nella foto */
+    /* Aggiungi il testo in basso a destra */
     .background-text {
       position: absolute;
-      bottom: 30px;
-      right: 30px;
+      bottom: 10px;
+      right: 10px;
       color: white;
-      font-family: 'Calisto MT', serif;
-      font-size: 40px;
-      text-shadow: 2px 2px 4px #000;
+      font-family: "Calisto MT", serif;
+      font-size: 20px;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+      transform: rotate(-10deg); /* Curva il testo */
     }
 
     header {
@@ -56,10 +57,10 @@
 
     /* Foto profilo ingrandita e proporzionata */
     header img {
-      width: 100px;        /* dimensione nuova */
+      width: 100px;
       height: 100px;
-      border-radius: 50%;  /* cerchio perfetto */
-      object-fit: cover;   /* evita deformazioni */
+      border-radius: 50%;
+      object-fit: cover;
       margin-right: 15px;
     }
 
@@ -91,33 +92,6 @@
       color: #1abc9c;
     }
 
-    /* Dropdown menu (se vuoi in futuro) */
-    nav ul li ul {
-      display: none;
-      position: absolute;
-      top: 35px;
-      left: 0;
-      background-color: #34495e;
-      padding: 10px 0;
-      border-radius: 4px;
-      min-width: 180px;
-      z-index: 1000;
-    }
-
-    nav ul li:hover ul {
-      display: block;
-    }
-
-    nav ul li ul li a {
-      display: block;
-      padding: 8px 15px;
-      color: white;
-    }
-
-    nav ul li ul li a:hover {
-      background-color: #1abc9c;
-    }
-
     main h1 {
       text-align: center;
       color: white;
@@ -137,7 +111,7 @@
       text-align: center;
       color: white;
       text-shadow: 1px 1px 3px #000;
-      margin-top: 0; /* alza la riga rispetto a quella precedente */
+      margin-top: 0;
       margin-bottom: 50px;
     }
 
@@ -152,7 +126,7 @@
       gap: 30px;
       max-width: 1000px;
       margin: auto;
-      margin-top: 0; /* sposta in basso tutto il blocco di finestre */
+      margin-top: 0;
     }
 
     .grid-item {
@@ -181,12 +155,25 @@
       color: white;
     }
 
+    /* Stili per il grassetto, corsivo e sottolineato */
+    .bold-text {
+      font-weight: bold;
+    }
+
+    .italic-text {
+      font-style: italic;
+    }
+
+    .underline-text {
+      text-decoration: underline;
+    }
+
     #welcome-title {
-      margin-top: 2cm; /* Sposta il titolo verso il basso */
+      margin-top: 2cm;
     }
 
     #explore-title {
-      margin-top: 2cm; /* Sposta anche il sottotitolo verso il basso */
+      margin-top: 2cm;
     }
   </style>
 </head>
@@ -206,7 +193,7 @@
     </ul>
   </nav>
 </header>
-  
+
 <main>
   <div class="titles-block">
     <h1 id="welcome-title">Welcome to the website of Ilaria Cunico</h1>
@@ -216,24 +203,23 @@
 
   <div class="grid-container">
     <a href="index.html" class="grid-item">
-      <h2>Complex Systems</h2>
-      <p>Introduction to Complex Systems</p>
+      <h2 class="bold-text">Complex Systems</h2>
+      <p class="italic-text">Introduction to Complex Systems</p>
     </a>
     <a href="ecosystem.html" class="grid-item">
-      <h2>Ecosystem Dynamics</h2>
-      <p>Research and Publications</p>
+      <h2 class="underline-text">Ecosystem Dynamics</h2>
+      <p class="italic-text">Research and Publications</p>
     </a>
     <a href="social.html" class="grid-item">
-      <h2>Social Dynamics</h2>
-      <p>Cooperation projects</p>
+      <h2 class="bold-text">Social Dynamics</h2>
+      <p class="italic-text">Cooperation projects</p>
     </a>
     <a href="philosophy.html" class="grid-item">
-      <h2>Philosophy of Complexity</h2>
+      <h2 class="underline-text">Philosophy of Complexity</h2>
       <p>The Age of Complexity</p>
     </a>
   </div>
 
-  <!-- Aggiungi la scritta sullo sfondo -->
   <div class="background-text">
     Young fisherman, coast of Tanzania, December 2022
   </div>
@@ -244,5 +230,4 @@
 </footer>
 
 </body>
-</html>
 </html>
