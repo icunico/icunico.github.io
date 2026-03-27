@@ -11,11 +11,10 @@
   </script>
 
   <meta charset="UTF-8">
-  <meta name="description" content="Philosophy of Complexity — Ilaria Cunico">
-  <meta name="keywords" content="Ilaria Cunico, Philosophy of Complexity, Ecological Modeling, Trophic Networks, Marine Science">
-  <meta name="author" content="Ilaria Cunico">
+  <meta name="description" content="Sito personale di Ilaria Cunico, con focus sulla filosofia della complessità, ecosistemi e dinamiche sociali">
+  <meta name="keywords" content="Ilaria Cunico, filosofia complessità, ecosistemi, dinamiche sociali, ricerca scientifica">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <title>Philosophy of Complexity — Ilaria Cunico</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
@@ -103,29 +102,34 @@
       font-weight: normal;
     }
 
-    /* Pulsante Translate */
-    #translate-btn {
-      margin-top: 15px;
-      padding: 8px 16px;
-      border: none;
-      border-radius: 6px;
-      background-color: #1abc9c;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    /* Pulsante Like cuore rosso */
-    #like-btn {
+    .like-container {
       position: absolute;
       bottom: 15px;
       right: 15px;
-      padding: 8px;
-      background-color: transparent;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .like-container button {
+      padding: 8px 14px;
+      font-size: 0.95rem;
+      background-color: #1abc9c;
+      color: white;
       border: none;
+      border-radius: 6px;
       cursor: pointer;
-      font-size: 32px;
-      color: red;
+    }
+
+    .translate-btn {
+      margin-top: 20px;
+      padding: 8px 14px;
+      font-size: 0.95rem;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
     }
 
     footer {
@@ -157,6 +161,7 @@
   <div class="titles-block">
     <h1 id="welcome-title">Philosophy of Complexity</h1>
     <div class="text-window">
+
       <p>Non temere, puoi avere qui tutto, subito e ora. Cibo indiano? Chiama Just eat. Vestiti dell'ultima sfilata? Vai su Amazon. Sesso? Iscriviti su Tinder. Viaggio? Prenota su Volagratis. Desiderio veloce, appagamento ancora più veloce.</p>
       <p>Scadenze. Fare 100 cose alla volta, leggere 100 news alla volta, scorrere 100 storie instagram alla volta. Bravo, veloce, corri.</p>
       <p>Hai successo come scienziato se pubblichi 1248 articoli in un anno, come artista se pubblichi 4474 album musicali in un anno, come regista se produci 4732 serie tv in un anno.</p>
@@ -167,11 +172,15 @@
       <p>Il fatto è che per cambiarlo bisogna continuare a starci e arrabattarsi. Soluzioni punk.</p>
       <p>Ma è importante capire che lo dobbiamo migliorare, che lo dobbiamo rallentare, che gli obiettivi a breve termine non sono equiparabili a quelli a lungo termine, che dobbiamo prenderci il tempo per focalizzarsi bene su un testo specifico, di riflettere, di viaggiare lentamente, di conoscere persone vere, di raggiungere un obiettivo ben pensato. E che il qui tutto, subito ed ora non è sempre la soluzione migliore.</p>
 
-      <!-- Pulsante Translate -->
-      <button id="translate-btn">Translate in English</button>
+      <!-- Pulsante Translate in English sotto il testo -->
+      <button class="translate-btn" id="translateBtn">Translate in English</button>
 
-      <!-- Like cuore rosso -->
-      <button id="like-btn">&#10084;</button> <!-- Cuore rosso -->
+      <!-- Pulsante Like in basso a destra -->
+      <div class="like-container">
+        <button id="like-btn">❤️ Like</button>
+        <span id="like-count">0</span>
+      </div>
+
     </div>
   </div>
 </main>
@@ -181,22 +190,22 @@
 </footer>
 
 <script>
-  // Salvataggio likes solo con cuoricino rosso
+  // Translate in English button (demo)
+  const translateBtn = document.getElementById('translateBtn');
+  translateBtn.addEventListener('click', () => {
+    alert("Questa funzione può essere collegata a un traduttore, ma il testo rimane in italiano.");
+  });
+
+  // Like button with localStorage
+  let likeCount = localStorage.getItem('likeCount') ? parseInt(localStorage.getItem('likeCount')) : 0;
   const likeBtn = document.getElementById('like-btn');
-  let likes = localStorage.getItem('likes') || 0;
+  const likeDisplay = document.getElementById('like-count');
+  likeDisplay.textContent = likeCount;
 
-  if(likes > 0){
-    likeBtn.classList.add('liked');
-  }
-
-  likeBtn.addEventListener('click', function(){
-    likeBtn.classList.toggle('liked');
-    if(likeBtn.classList.contains('liked')){
-      likes = 1;
-    } else {
-      likes = 0;
-    }
-    localStorage.setItem('likes', likes);
+  likeBtn.addEventListener('click', () => {
+    likeCount++;
+    likeDisplay.textContent = likeCount;
+    localStorage.setItem('likeCount', likeCount);
   });
 </script>
 
