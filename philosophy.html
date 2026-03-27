@@ -86,7 +86,6 @@
       margin-top: -3cm;
     }
 
-    /* Finestra azzurro chiaro centrata */
     .text-window {
       background-color: #cce7ff;
       padding: 30px 40px;
@@ -98,6 +97,7 @@
       box-shadow: 0 5px 15px rgba(0,0,0,0.2);
       position: relative;
     }
+
     .text-window p {
       margin: 0 0 10px 0;
       font-weight: normal;
@@ -115,7 +115,7 @@
       cursor: pointer;
     }
 
-    /* Pulsante Like e contatore */
+    /* Pulsante Like cuore rosso */
     #like-btn {
       position: absolute;
       bottom: 15px;
@@ -124,18 +124,8 @@
       background-color: transparent;
       border: none;
       cursor: pointer;
-      font-size: 24px;
-    }
-
-    #like-btn.liked {
+      font-size: 32px;
       color: red;
-    }
-
-    #like-count {
-      position: absolute;
-      bottom: 15px;
-      right: 60px;
-      font-weight: bold;
     }
 
     footer {
@@ -180,10 +170,8 @@
       <!-- Pulsante Translate -->
       <button id="translate-btn">Translate in English</button>
 
-      <!-- Like button -->
-      <div id="like-count">Likes: 0</div>
-      <button id="like-btn">&#10084;</button> <!-- Cuore come simbolo Like -->
-
+      <!-- Like cuore rosso -->
+      <button id="like-btn">&#10084;</button> <!-- Cuore rosso -->
     </div>
   </div>
 </main>
@@ -193,24 +181,24 @@
 </footer>
 
 <script>
-  // Variabili per il like
-  let likeBtn = document.getElementById('like-btn');
-  let likeCount = document.getElementById('like-count');
-  let likes = 0;
+  // Salvataggio likes solo con cuoricino rosso
+  const likeBtn = document.getElementById('like-btn');
+  let likes = localStorage.getItem('likes') || 0;
 
-  // Gestione dei like
-  likeBtn.addEventListener('click', function() {
-    if (likeBtn.classList.contains('liked')) {
-      likeBtn.classList.remove('liked');
-      likes--;
+  if(likes > 0){
+    likeBtn.classList.add('liked');
+  }
+
+  likeBtn.addEventListener('click', function(){
+    likeBtn.classList.toggle('liked');
+    if(likeBtn.classList.contains('liked')){
+      likes = 1;
     } else {
-      likeBtn.classList.add('liked');
-      likes++;
+      likes = 0;
     }
-    likeCount.innerText = 'Likes: ' + likes;
-    localStorage.setItem('likes', likes); // Salva i likes nel localStorage
+    localStorage.setItem('likes', likes);
   });
+</script>
 
-  // Carica i likes dal localStorage
-  window.onload = function() {
-    if (local
+</body>
+</html>
