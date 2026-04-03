@@ -72,12 +72,34 @@
       color: #1abc9c;
     }
 
+    /* Bottone traduzione in alto a destra */
+    .translate-button-container {
+      text-align: right;
+      padding: 10px 30px;
+      background: #f7f7f7;
+    }
+
+    .translate-button-container a {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: white;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .translate-button-container a:hover {
+      background-color: #2980b9;
+    }
+
     main {
       background-image: url('sfondo1.jpg');
       background-size: cover;
       background-position: center;
       min-height: 100vh;
-      padding: 120px 30px 50px 30px;
+      padding: 40px 30px 50px 30px;
       text-align: center;
     }
 
@@ -142,27 +164,6 @@
       background-color: #2c3e50;
       color: white;
     }
-
-    /* Bottone traduzione in alto a destra */
-    .translate-button-container {
-      text-align: right;
-      padding: 10px 30px;
-    }
-
-    .translate-button-container a {
-      display: inline-block;
-      padding:10px 20px;
-      background-color:#3498db;
-      color:white;
-      font-weight:bold;
-      border-radius:8px;
-      text-decoration:none;
-      transition:background-color 0.3s;
-    }
-
-    .translate-button-container a:hover {
-      background-color:#2980b9;
-    }
   </style>
 </head>
 
@@ -184,7 +185,7 @@
   </nav>
 </header>
 
-<!-- Pulsante traduzione in alto a destra -->
+<!-- Pulsante Traduci in inglese -->
 <div class="translate-button-container">
   <a href="ecosystem_en.html">Traduci in inglese</a>
 </div>
