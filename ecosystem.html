@@ -72,6 +72,24 @@
       color: #1abc9c;
     }
 
+    /* Pulsante traduzione in alto a destra */
+    .translate-button {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      background-color: #3498db;
+      color: white;
+      padding: 10px 20px;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .translate-button:hover {
+      background-color: #2980b9;
+    }
+
     main {
       background-image: url('sfondo1.jpg');
       background-size: cover;
@@ -79,6 +97,7 @@
       min-height: 100vh;
       padding: 120px 30px 50px 30px;
       text-align: center;
+      position: relative; /* necessario per il pulsante in alto a destra */
     }
 
     .content-box {
@@ -163,6 +182,9 @@
   </nav>
 </header>
 
+<!-- Pulsante traduzione in alto a destra -->
+<a class="translate-button" href="ecosystem_en.html">Traduci in inglese</a>
+
 <main>
   <div class="content-box">
     <h1>Rilevanza Tesi: Ecosistemi — Una danza al confine tra ordine e caos</h1>
@@ -170,11 +192,16 @@
     <p>Ordine nel disordine. Semplicità nella complessità. La realtà è coesistenza di contraddizioni. Ma com’è possibile? La scienza ce lo spiega. Gli ecosistemi, reti interconnesse di biodiversità, sono sistemi complessi caotici. Piccole variazioni delle condizioni iniziali presenti possono provocare grandi cambiamenti futuri, proprio come una farfalla che batte le ali in Asia può generare un uragano in Texas.</p>
 
     <figure>
-      <img src="figura1.jpg" alt="Condizione presente e futura dell’ecosistema">
+      <img src="figura1.png" alt="Condizione presente e futura dell’ecosistema">
       <figcaption>Figura 1: Condizione presente e futura dell’ecosistema. In sistemi caotici, piccole variazioni nelle condizioni iniziali possono dar luogo a grandi trasformazioni nel tempo: è il cosiddetto “effetto farfalla”.</figcaption>
     </figure>
 
     <p>Gli ecosistemi sembrano quindi immersi nel disordine: poiché non possiamo mai conoscere con certezza assoluta le condizioni iniziali, la loro estrema sensibilità alle piccole variazioni rende il futuro intrinsecamente imprevedibile. Sorprendentemente però ciò che sembra un’oscillazione disordinata nel tempo crea in realtà figure ben ordinate e strutturate nello spazio, i cosiddetti frattali. Infatti, la traiettoria nel tempo dell’ecosistema si allunga e si ripiega su sé stessa all’infinito nello spazio, ripetendosi e creando delle figure perfette. Non sembrano forse dei meravigliosi dipinti, quelli mostrati in Figura 2? Non è una mano divina a tracciarli, ma i principi fisici che governano gli ecosistemi stessi.</p>
+
+    <figure>
+      <img src="figura2.png" alt="Frattali negli ecosistemi">
+      <figcaption>Figura 2: Traiettoria temporale dell’ecosistema che si ripiega su sé stessa nello spazio, creando figure frattali ordinate.</figcaption>
+    </figure>
 
     <p>Tutti gli ecosistemi sono caotici, i fiumi, i mari, le foreste, i deserti. Ciò che genera questa danza è la biodiversità stessa: le interazioni tra componenti viventi (come piante e animali) e non viventi (come acqua, sedimenti e nutrienti) creano feedback e reti interconnesse. In questo modo, tutti gli elementi dell'ecosistema si influenzano a vicenda, creando un equilibrio dinamico che può manifestarsi come stabilità o come oscillazioni periodiche.</p>
 
