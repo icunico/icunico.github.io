@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PXE62W3QKL"></script>
@@ -14,7 +14,7 @@
   <meta name="description" content="Ecosystem River Dynamics - Ilaria Cunico">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Ecosystem River Dynamics — Ilaria Cunico</title>
+  <title>Rilevanza Tesi: Ecosistemi — Ilaria Cunico</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
@@ -85,18 +85,20 @@
       background-color: #cce7ff;
       padding: 40px;
       border-radius: 12px;
-      max-width: 700px;
+      max-width: 900px;
       margin: 0 auto;
       box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      text-align: left;
     }
 
     .content-box h1 {
       margin-bottom: 20px;
+      text-align: center;
     }
 
-    .paper-link {
+    .paper-link, .translate-button, .like-button {
       display: inline-block;
-      margin-top: 25px;
+      margin-top: 20px;
       padding: 12px 20px;
       background-color: #1abc9c;
       color: white;
@@ -104,10 +106,20 @@
       border-radius: 8px;
       font-weight: bold;
       transition: background-color 0.3s;
+      cursor: pointer;
+      margin-right: 10px;
     }
 
-    .paper-link:hover {
+    .paper-link:hover, .translate-button:hover, .like-button:hover {
       background-color: #16a085;
+    }
+
+    .like-button {
+      background-color: #e74c3c;
+    }
+
+    .like-button.liked {
+      background-color: #c0392b;
     }
 
     footer {
@@ -115,6 +127,22 @@
       padding: 15px;
       background-color: #2c3e50;
       color: white;
+    }
+
+    figure {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    figure img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+
+    figcaption {
+      font-size: 0.9rem;
+      margin-top: 5px;
+      color: #333;
     }
   </style>
 </head>
@@ -139,27 +167,48 @@
 
 <main>
   <div class="content-box">
-    <h1>Ecosystem River Dynamics</h1>
+    <h1>Rilevanza Tesi: Ecosistemi — Una danza al confine tra ordine e caos</h1>
 
-    <p>
-      This page presents my research on river ecosystem dynamics, focusing on 
-      nonlinear interactions between flow, sediment, and vegetation.
+    <p>Ordine nel disordine. Semplicità nella complessità. La realtà è coesistenza di contraddizioni. Ma com’è possibile? La scienza ce lo spiega. Gli ecosistemi, reti interconnesse di biodiversità, sono sistemi complessi caotici. Piccole variazioni delle condizioni iniziali presenti possono provocare grandi cambiamenti futuri, proprio come una farfalla che batte le ali in Asia può generare un uragano in Texas.</p>
+
+    <figure>
+      <img src="figura1.jpg" alt="Condizione presente e futura dell’ecosistema">
+      <figcaption>Figura 1: Condizione presente e futura dell’ecosistema. In sistemi caotici, piccole variazioni nelle condizioni iniziali possono dar luogo a grandi trasformazioni nel tempo: è il cosiddetto “effetto farfalla”.</figcaption>
+    </figure>
+
+    <p>Gli ecosistemi sembrano quindi immersi nel disordine: poiché non possiamo mai conoscere con certezza assoluta le condizioni iniziali, la loro estrema sensibilità alle piccole variazioni rende il futuro intrinsecamente imprevedibile. Sorprendentemente però ciò che sembra un’oscillazione disordinata nel tempo crea in realtà figure ben ordinate e strutturate nello spazio, i cosiddetti frattali. Infatti, la traiettoria nel tempo dell’ecosistema si allunga e si ripiega su sé stessa all’infinito nello spazio, ripetendosi e creando delle figure perfette. Non sembrano forse dei meravigliosi dipinti, quelli mostrati in Figura 2? Non è una mano divina a tracciarli, ma i principi fisici che governano gli ecosistemi stessi.</p>
+
+    <p>Tutti gli ecosistemi sono caotici, i fiumi, i mari, le foreste, i deserti. Ciò che genera questa danza è la biodiversità stessa: le interazioni tra componenti viventi (come piante e animali) e non viventi (come acqua, sedimenti e nutrienti) creano feedback e reti interconnesse. In questo modo, tutti gli elementi dell'ecosistema si influenzano a vicenda, creando un equilibrio dinamico che può manifestarsi come stabilità o come oscillazioni periodiche.</p>
+
+    <p>Gli ecosistemi vengono poi perturbati da disturbi esterni (piene, incendi, vento) che alterano ciclicamente l’equilibrio. Infatti, i disturbi esterni modificano i feedback tra i vari elementi, spingendoli verso la stabilità o verso le grandi oscillazioni. Nasce così una danza al confine tra ordine e caos, capace di generare strutture complesse e affascinanti, i frattali. La vita e la biodiversità in questo modo prosperano ed evolvono, tra periodi di caotico rinnovo e quiete.</p>
+
+    <p>Purtroppo, il cambiamento climatico, alimentato dalla crescente pressione antropica, sta alterando profondamente i disturbi esterni che agiscono sugli ecosistemi. In molte aree del mondo, questi disturbi diventano sempre più intensi e concentrati, spingendo i sistemi lontano dal delicato confine tra ordine e caos. Gli ecosistemi rischiano di precipitare in un caos totale, dove ogni previsione diventa impossibile, oppure di cristallizzarsi in uno stato stazionario permanente — una condizione priva di interazioni vitali, che equivale alla morte della biodiversità. La danza tra ordine e caos sta perdendo il ritmo, spingendosi verso uno spazio dei parametri ignoto. La scienza, e questa tesi come piccolo contributo, mira a comprendere le dinamiche fondamentali dell’ecosistema, per poterlo capire a fondo e contribuire alla sua conservazione e tutela.</p>
+
+    <button class="translate-button" onclick="translateText()">Translate to English</button>
+    <button class="like-button" onclick="toggleLike()">❤ Like</button>
+
+    <p style="margin-top:30px;">
+      <a class="paper-link" href="river_ecosystem.html" target="_blank">River Ecosystem Dynamics</a>
+      <a class="paper-link" href="marine_ecosystem.html" target="_blank">Marine Ecosystem Dynamics</a>
     </p>
-
-    <p>
-      The work highlights how biogeomorphic feedbacks can generate complex 
-      and potentially chaotic behavior in river systems, limiting long-term predictability.
-    </p>
-
-    <a class="paper-link" href="https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2023GL107951" target="_blank">
-      Read the paper
-    </a>
   </div>
 </main>
 
 <footer>
   <p>&copy; 2026 Ilaria Cunico</p>
 </footer>
+
+<script>
+  function translateText() {
+    alert("Funzione di traduzione in inglese da implementare qui!");
+    // Qui potremmo inserire la logica per tradurre il testo
+  }
+
+  function toggleLike() {
+    const btn = document.querySelector('.like-button');
+    btn.classList.toggle('liked');
+  }
+</script>
 
 </body>
 </html>
