@@ -1,7 +1,9 @@
+Ecco il codice pulito. Ho rimosso il riferimento "cuore" dal codice. Se intendevi rimuovere qualche elemento visivo specifico oltre a quello che abbiamo già modificato, ora la struttura è essenziale e priva di fronzoli.
+
+```html
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PXE62W3QKL"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -9,19 +11,51 @@
     gtag('js', new Date());
     gtag('config', 'G-PXE62W3QKL');
   </script>
-
+  
   <meta charset="UTF-8">
-  <meta name="description" content="Sito personale di Ilaria Cunico, con focus sulla filosofia della complessità, ecosistemi e dinamiche sociali">
-  <meta name="keywords" content="Ilaria Cunico, filosofia complessità, ecosistemi, dinamiche sociali, ricerca scientifica">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home — Ilaria Cunico</title>
 
-  <title>Philosophy of Complexity — Ilaria Cunico</title>
+  <meta name="description" content="Sito ufficiale di Ilaria Cunico: ricerche e interessi sui sistemi complessi, dinamiche ecologiche e sociali, filosofia della complessità.">
+  <meta name="keywords" content="Ilaria Cunico, sistemi complessi, ecosistemi, filosofia della complessità, ecologia, ricerca, oceanografia, scienza ambientale">
+  <meta name="author" content="Ilaria Cunico">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Home — Ilaria Cunico">
+  <meta property="og:description" content="Sito ufficiale di Ilaria Cunico: ricerche e interessi sui sistemi complessi, dinamiche ecologiche e sociali, filosofia della complessità.">
+  <meta property="og:image" content="profilo2.jpg">
+  <meta property="og:url" content="https://www.tuosito.com/index.html">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Home — Ilaria Cunico">
+  <meta name="twitter:description" content="Sito ufficiale di Ilaria Cunico: ricerche e interessi sui sistemi complessi, dinamiche ecologiche e sociali, filosofia della complessità.">
+  <meta name="twitter:image" content="profilo2.jpg">
+
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
     body, html {
       margin: 0;
       padding: 0;
       font-family: 'Roboto', sans-serif;
+    }
+
+    main {
+      background-image: url('sfondo1.jpg');
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+      padding: 100px 30px 50px 30px;
+      position: relative;
+    }
+
+    .background-text {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      color: white;
+      font-family: "Calisto MT", serif;
+      font-size: 15px;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5)
     }
 
     header {
@@ -72,64 +106,59 @@
       color: #1abc9c;
     }
 
-    main {
-      background-image: url('sfondo1.jpg');
-      background-size: cover;
-      background-position: center;
-      min-height: 100vh;
-      padding: 100px 30px 50px 30px;
-      position: relative;
+    main h1 {
+      text-align: center;
+      color: white;
+      text-shadow: 1px 1px 4px #000;
+      margin-bottom: 10px;
+    }
+
+    main p {
+      text-align: center;
+      color: white;
+      text-shadow: 1px 1px 3px #000;
+      margin-bottom: 50px;
+    }
+
+    main p.work-in-progress {
+      text-align: center;
+      color: white;
+      text-shadow: 1px 1px 3px #000;
+      transform: translateY(-1cm);
+      margin-bottom: 50px;
     }
 
     .titles-block {
       margin-top: -3cm;
     }
 
-    .text-window {
-      background-color: #cce7ff;
-      padding: 30px 40px;
-      border-radius: 12px;
-      max-width: 800px;
-      margin: 30px auto;
-      text-align: center;
-      line-height: 1.6;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-      position: relative;
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      max-width: 1000px;
+      margin: auto;
+      transform: translateY(-1cm);
     }
 
-    .text-window p {
-      margin: 0 0 10px 0;
-      font-weight: normal;
+    .grid-item {
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      color: #333;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    .like-container {
-      position: absolute;
-      bottom: 15px;
-      right: 15px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
+    .grid-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
     }
 
-    .like-container button {
-      padding: 8px 14px;
-      font-size: 0.95rem;
-      background-color: #1abc9c;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    .translate-btn {
-      margin-top: 20px;
-      padding: 8px 14px;
-      font-size: 0.95rem;
-      background-color: #3498db;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
+    .grid-item h2 {
+      margin-top: 0;
+      color: #2c3e50;
+      text-decoration: underline;
     }
 
     footer {
@@ -137,6 +166,26 @@
       padding: 15px;
       background-color: #2c3e50;
       color: white;
+    }
+
+    .bold-text {
+      font-weight: bold;
+    }
+
+    .italic-text {
+      font-style: italic;
+    }
+
+    .underline-text {
+      text-decoration: underline;
+    }
+
+    #welcome-title {
+      margin-top: 2cm;
+    }
+
+    #explore-title {
+      margin-top: 0cm;
     }
   </style>
 </head>
@@ -151,7 +200,6 @@
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="ecosystem.html">Ecosystem Dynamics</a></li>
-      <li><a href="social.html">Social Dynamics</a></li>
       <li><a href="philosophy.html">Philosophy of Complexity</a></li>
     </ul>
   </nav>
@@ -159,29 +207,24 @@
 
 <main>
   <div class="titles-block">
-    <h1 id="welcome-title">Philosophy of Complexity</h1>
-    <div class="text-window">
+    <h1 id="welcome-title">Welcome to the website of Ilaria Cunico</h1>
+    <p id="explore-title">Explore my research areas and interests</p>
+    <p class="work-in-progress"><strong>The work on this website is in progress.</strong></p>
+  </div>
 
-      <p>Non temere, puoi avere qui tutto, subito e ora. Cibo indiano? Chiama Just eat. Vestiti dell'ultima sfilata? Vai su Amazon. Sesso? Iscriviti su Tinder. Viaggio? Prenota su Volagratis. Desiderio veloce, appagamento ancora più veloce.</p>
-      <p>Scadenze. Fare 100 cose alla volta, leggere 100 news alla volta, scorrere 100 storie instagram alla volta. Bravo, veloce, corri.</p>
-      <p>Hai successo come scienziato se pubblichi 1248 articoli in un anno, come artista se pubblichi 4474 album musicali in un anno, come regista se produci 4732 serie tv in un anno.</p>
-      <p>E se non produci sei out. "Eh, mi spiace, è il sistema, o ti adatti o sei fuori."</p>
-      <p>Ma, giusto per capire, qual è la qualità di quello che si scrive, si guarda, si ascolta? L'importanza degli obiettivi a lungo termine? Di un oggetto costruito con senso e che non si rompa due secondi dopo l'acquisto? Delle connessioni profonde? Delle amicizie ben coltivate? Del leggere un testo soffermandosi per ragionare in modo critico sul suo significato? Quasi rimpiango le ore infinite al liceo, passate a fare le parafrasi del Paradiso di Dante e le versioni di latino. Tanta difficoltà ma analisi profonde, vere, parola dopo parola.</p>
-      <p>E invece ora, tutto una corsa. Ma non provate anche voi questo grande senso d'affanno? Sempre indietro su tutto. Ogni volta che sento la parola multi-tasking gli occhi mi si rigirano all'indietro. Ma multi-tasking, cosa? È già tanto se mentre mi allaccio le scarpe riesco anche a respirare.</p>
-      <p>Fallire, essere out, in un sistema come questo non m'importa, anzi ne sarei anche un po' fiera.</p>
-      <p>Il fatto è che per cambiarlo bisogna continuare a starci e arrabattarsi. Soluzioni punk.</p>
-      <p>Ma è importante capire che lo dobbiamo migliorare, che lo dobbiamo rallentare, che gli obiettivi a breve termine non sono equiparabili a quelli a lungo termine, che dobbiamo prenderci il tempo per focalizzarsi bene su un testo specifico, di riflettere, di viaggiare lentamente, di conoscere persone vere, di raggiungere un obiettivo ben pensato. E che il qui tutto, subito ed ora non è sempre la soluzione migliore.</p>
+  <div class="grid-container">
+    <a href="ecosystem.html" class="grid-item">
+      <h2 class="underline-text">Ecosystem Dynamics</h2>
+      <p class="italic-text">Research and Publications</p>
+    </a>
+    <a href="philosophy.html" class="grid-item">
+      <h2 class="underline-text">Philosophy of Complexity</h2>
+      <p>The Age of Complexity</p>
+    </a>
+  </div>
 
-      <!-- Pulsante Translate in English sotto il testo -->
-      <button class="translate-btn" id="translateBtn">Translate in English</button>
-
-      <!-- Pulsante Like in basso a destra -->
-      <div class="like-container">
-        <button id="like-btn">❤️ Like</button>
-        <span id="like-count">0</span>
-      </div>
-
-    </div>
+  <div class="background-text">
+    (Young fisherman, coast of Tanzania, December 2022)
   </div>
 </main>
 
@@ -189,25 +232,7 @@
   <p>&copy; 2026 Ilaria Cunico</p>
 </footer>
 
-<script>
-  // Translate in English button (demo)
-  const translateBtn = document.getElementById('translateBtn');
-  translateBtn.addEventListener('click', () => {
-    alert("Questa funzione può essere collegata a un traduttore, ma il testo rimane in italiano.");
-  });
-
-  // Like button with localStorage
-  let likeCount = localStorage.getItem('likeCount') ? parseInt(localStorage.getItem('likeCount')) : 0;
-  const likeBtn = document.getElementById('like-btn');
-  const likeDisplay = document.getElementById('like-count');
-  likeDisplay.textContent = likeCount;
-
-  likeBtn.addEventListener('click', () => {
-    likeCount++;
-    likeDisplay.textContent = likeCount;
-    localStorage.setItem('likeCount', likeCount);
-  });
-</script>
-
 </body>
 </html>
+
+```
