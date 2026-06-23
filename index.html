@@ -1,7 +1,11 @@
+Ecco il codice HTML aggiornato. Ho rimosso i blocchi relativi a "Complex Systems" e "Social Dynamics" sia dal menu di navigazione (`<nav>`) sia dalla griglia principale (`.grid-container`).
+
+Inoltre, ho ripulito la chiusura del file eliminando il doppio tag `</body></html>` che era presente alla fine.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PXE62W3QKL"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -13,19 +17,16 @@
   <meta charset="UTF-8">
   <title>Home — Ilaria Cunico</title>
 
-  <!-- SEO Meta Tags -->
   <meta name="description" content="Sito ufficiale di Ilaria Cunico: ricerche e interessi sui sistemi complessi, dinamiche ecologiche e sociali, filosofia della complessità.">
-  <meta name="keywords" content="Ilaria Cunico, sistemi complessi, ecosistemi, social dynamics, filosofia della complessità, ecologia, ricerca, oceanografia, scienza ambientale">
+  <meta name="keywords" content="Ilaria Cunico, sistemi complessi, ecosistemi, filosofia della complessità, ecologia, ricerca, oceanografia, scienza ambientale">
   <meta name="author" content="Ilaria Cunico">
 
-  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Home — Ilaria Cunico">
   <meta property="og:description" content="Sito ufficiale di Ilaria Cunico: ricerche e interessi sui sistemi complessi, dinamiche ecologiche e sociali, filosofia della complessità.">
   <meta property="og:image" content="profilo2.jpg">
   <meta property="og:url" content="https://www.tuosito.com/index.html">
 
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Home — Ilaria Cunico">
   <meta name="twitter:description" content="Sito ufficiale di Ilaria Cunico: ricerche e interessi sui sistemi complessi, dinamiche ecologiche e sociali, filosofia della complessità.">
@@ -201,7 +202,6 @@
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="ecosystem.html">Ecosystem Dynamics</a></li>
-      <li><a href="social.html">Social Dynamics</a></li>
       <li><a href="philosophy.html">Philosophy of Complexity</a></li>
     </ul>
   </nav>
@@ -215,17 +215,9 @@
   </div>
 
   <div class="grid-container">
-    <a href="index.html" class="grid-item">
-      <h2 class="bold-text">Complex Systems</h2>
-      <p class="italic-text">Introduction to Complex Systems</p>
-    </a>
     <a href="ecosystem.html" class="grid-item">
       <h2 class="underline-text">Ecosystem Dynamics</h2>
       <p class="italic-text">Research and Publications</p>
-    </a>
-    <a href="social.html" class="grid-item">
-      <h2 class="bold-text">Social Dynamics</h2>
-      <p class="italic-text">Cooperation projects</p>
     </a>
     <a href="philosophy.html" class="grid-item">
       <h2 class="underline-text">Philosophy of Complexity</h2>
@@ -245,5 +237,4 @@
 </body>
 </html>
 
-</body>
-</html>
+```
