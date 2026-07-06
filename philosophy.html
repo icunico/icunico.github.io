@@ -1,79 +1,207 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Riflessioni sul Tempo e sulla Lentezza</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            font-family: "Roboto", sans-serif;
-        }
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PXE62W3QKL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PXE62W3QKL');
+  </script>
 
-        main {
-            background-image: url("sfondo1.jpg");
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            min-height: 100vh;
-            padding: 60px 0;
-        }
+  <meta charset="UTF-8">
+  <meta name="description" content="L'era della complessità: iperconnessi - Ilaria Cunico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        .content {
-            max-width: 850px;
-            margin: auto;
-            background: rgba(255,255,255,0.88);
-            padding: 50px;
-            border-radius: 12px;
-            line-height: 1.9;
-            font-size: 1.15rem;
-            color: #222;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.25);
-        }
+  <title>L'era della complessità: iperconnessi — Ilaria Cunico</title>
 
-        .content p {
-            margin-bottom: 1.6em;
-            text-align: justify;
-        }
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
-        .background-text {
-            position: fixed;
-            bottom: 15px;
-            right: 20px;
-            color: white;
-            font-size: 14px;
-            text-shadow: 2px 2px 5px black;
-        }
-    </style>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: rgba(44, 62, 80, 0.9);
+      color: white;
+      padding: 10px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 15px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin-left: 25px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #1abc9c;
+    }
+
+    main {
+      background-image: url('sfondo1.jpg');
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+      padding: 40px 30px 50px 30px;
+      text-align: center;
+    }
+
+    .content-box {
+      background-color: #cce7ff;
+      padding: 40px;
+      border-radius: 12px;
+      max-width: 900px;
+      margin: 0 auto;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      text-align: left;
+      line-height: 1.9;
+      font-size: 1.15rem;
+      color: #222;
+    }
+
+    .content-box h1 {
+      margin-bottom: 30px;
+      text-align: center;
+      color: #111;
+      font-size: 2.2rem;
+      font-weight: 700;
+    }
+
+    .content-box p {
+      margin-bottom: 1.6em;
+      text-align: justify;
+    }
+
+    .ecosystem-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+
+    .ecosystem-buttons a {
+      display: inline-block;
+      padding: 20px 40px;
+      font-size: 1.5rem;
+      background-color: #1abc9c;
+      color: white;
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .ecosystem-buttons a:hover {
+      background-color: #16a085;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #2c3e50;
+      color: white;
+    }
+  </style>
 </head>
+
 <body>
 
-    <main>
-        <div class="content">
-            <p>Non temere, puoi avere qui tutto, subito e ora. Cibo indiano? Chiama Just eat. Vestiti dell'ultima sfilata? Vai su Amazon. Sesso? Iscriviti su Tinder. Viaggio? Prenota su Volagratis. Desiderio veloce, appagamento ancora più veloce.</p>
-            
-            <p>Scadenze. Fare 100 cose alla volta, leggere 100 news alla volta, scorrere 100 storie instagram alla volta. Bravo, veloce, corri.</p>
-            
-            <p>Hai successo come scienziato se pubblichi 1248 articoli in un anno, come artista se pubblichi 4474 album musicali in un anno, come regista se produci 4732 serie tv in un anno.</p>
-            
-            <p>E se non produci sei out. "Eh, mi spiace, è il sistema, o ti adatti o sei fuori."</p>
-            
-            <p>Ma, giusto per capire, qual è la qualità di quello che si scrive, si guarda, si ascolta? L'importance degli obiettivi a lungo termine? Di un oggetto costruito con senso e che non si rompa due secondi dopo l'acquisto? Delle connessioni profonde? Delle amicizie ben coltivate? Del leggere un testo soffermandosi per ragionare in modo critico sul suo significato? Quasi mi mancano le ore infinite al liceo, passate a fare le parafrasi del Paradiso di Dante, o peggio ancora le versioni di latino. Tante madonne (non solo nel primo caso) ma analisi profonde, vere, parola dopo parola.</p>
-            
-            <p>E invece ora, tutto una corsa. Ma non provate anche voi questo grande senso d'affanno? Sempre indietro su tutto. Ogni volta che sento la parola multi-tasking gli occhi mi si rigirano all'indietro. Ma multi-tasking, cosa? È già tanto se mentre mi allaccio le scarpe riesco anche a respirare.</p>
-            
-            <p>Fallire, essere out, in un sistema come questo non m'importa, anzi ne sarei anche un po' fiera.</p>
-            
-            <p>Il fatto è che per cambiarlo bisogna continuare a starci e arrabattarsi. Soluzioni punk.</p>
-            
-            <p>Ma è importante capire che lo dobbiamo migliorare, che lo dobbiamo rallentare, che gli obiettivi a breve termine non sono equiparabili a quelli a lungo termine, che dobbiamo prenderci il tempo per focalizzarsi bene su un testo specifico, di riflettere, di viaggiare lentamente, di conoscere persone vere, di raggiungere un obiettivo ben pensato. E che il qui tutto, subito ed ora non è sempre la solida soluzione migliore.</p>
-        </div>
-        
-        <div class="background-text">
-            Soluzioni Punk
-        </div>
-    </main>
+<header>
+  <div style="display:flex; align-items:center;">
+    <img src="profilo.jpg" alt="Ilaria Cunico">
+    <h1>Ilaria Cunico</h1>
+  </div>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ecosystem.html">Ecosystem Dynamics</a></li>
+      <li><a href="philosophy.html">Philosophy of Complexity</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <div class="content-box">
+    <div style="text-align: left; margin-bottom: 20px;">
+      <a href="ecosystem_en.html" style="
+          padding: 8px 16px; 
+          background-color: #3498db; 
+          color: white; 
+          font-weight: bold; 
+          border-radius: 6px; 
+          text-decoration: none;
+          transition: background-color 0.3s;
+      " onmouseover="this.style.backgroundColor='#2980b9'" onmouseout="this.style.backgroundColor='#3498db'">
+        Traduci in inglese
+      </a>
+    </div>
+
+    <h1>L'era della complessità: iperconnessi</h1>
+
+    <p>Non temere, puoi avere qui tutto, subito e ora. Cibo indiano? Chiama Just eat. Vestiti dell'ultima sfilata? Vai su Amazon. Sesso? Iscriviti su Tinder. Viaggio? Prenota su Volagratis. Desiderio veloce, appagamento ancora più veloce.</p>
+
+    <p>Scadenze. Fare 100 cose alla volta, leggere 100 news alla volta, scorrere 100 storie instagram alla volta. Bravo, veloce, corri.</p>
+
+    <p>Hai successo come scienziato se pubblichi 1248 articoli in un anno, come artista se pubblichi 4474 album musicali in un anno, come regista se produci 4732 serie tv in un anno.</p>
+
+    <p>E se non produci sei out. "Eh, mi spiace, è il sistema, o ti adatti o sei fuori."</p>
+
+    <p>Ma, giusto per capire, qual è la qualità di quello che si scrive, si guarda, si ascolta? L'importanza degli obiettivi a lungo termine? Di un oggetto costruito con senso e che non si rompa due secondi dopo l'acquisto? Delle connessioni profonde? Delle amicizie ben coltivate? Del leggere un testo soffermandosi per ragionare in modo critico sul suo significato? Quasi mi mancano le ore infinite al liceo, passate a fare le parafrasi del Paradiso di Dante, o peggio ancora le versioni di latino. Tante madonne (non solo nel primo caso) ma analisi profonde, vere, parola dopo parola.</p>
+
+    <p>E invece ora, tutto una corsa. Ma non provate anche voi questo grande senso d'affanno? Sempre indietro su tutto. Ogni volta che sento la parola multi-tasking gli occhi mi si rigirano all'indietro. Ma multi-tasking, cosa? È già tanto se mentre mi allaccio le scarpe riesco anche a respirare.</p>
+
+    <p>Fallire, essere out, in un sistema come questo non m'importa, anzi ne sarei anche un po' fiera.</p>
+
+    <p>Il fatto è che per cambiarlo bisogna continuare a starci e arrabattarsi. Soluzioni punk.</p>
+
+    <p>Ma è importante capire che lo dobbiamo migliorare, che lo dobbiamo rallentare, che gli obiettivi a breve termine non sono equiparabili a quelli a lungo termine, che dobbiamo prenderci il tempo per focalizzarsi bene su un testo specifico, di riflettere, di viaggiare lentamente, di conoscere persone vere, di raggiungere un obiettivo ben pensato. E che il qui tutto, subito ed ora non è sempre la soluzione migliore.</p>
+
+    <div class="ecosystem-buttons">
+      <a href="river_ecosystem.html" target="_blank">River Ecosystem Dynamics</a>
+      <a href="marine_ecosystem.html" target="_blank">Marine Ecosystem Dynamics</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2026 Ilaria Cunico</p>
+</footer>
 
 </body>
 </html>
