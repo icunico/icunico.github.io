@@ -37,7 +37,7 @@
     }
 
     main {
-      background-image: url('sfondo1.jpg');
+      background-image: url('index_foto.png');
       background-size: cover;
       background-position: center;
       min-height: 100vh;
@@ -52,7 +52,7 @@
       color: white;
       font-family: "Calisto MT", serif;
       font-size: 15px;
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5)
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     }
 
     header {
@@ -232,7 +232,7 @@
     <h1 id="welcome-title">Welcome to the website of Ilaria Cunico</h1>
     <p id="explore-title">Explore my research areas and interests</p>
     <p class="work-in-progress"><strong>The work on this website is in progress.</strong></p>
-    <p class="bio-quote">"Somewhere between an environmental engineer, a physicist, and a philosopher. I stand stubbornly in the opposite direction to fight climate change and social inequality, investigating the fundamental mathematical laws, properties, and dynamics of ecosystems."</p>
+    <p class="bio-quote">"I study the fundamental mathematical laws, properties, and dynamics of ecosystems."</p>
   </div>
 
   <div class="grid-container">
@@ -254,12 +254,10 @@
 <footer>
   <p>&copy; 2026 Ilaria Cunico | <a href="mailto:icunico@ogs.it">icunico@ogs.it</a></p>
   
-  <!-- Contatore di visite visibile che ignora i tuoi click -->
   <div id="visitor-counter" style="margin-top: 15px;"></div>
 </footer>
 
 <script>
-  // Controllo per escludere le tue visite
   const isOwner = localStorage.getItem('ignore_my_visits') === 'true';
 
   if (!isOwner && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
@@ -273,4 +271,5 @@
 </script>
 
 </body>
+</html>
 </html>
