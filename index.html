@@ -34,16 +34,17 @@
       margin: 0;
       padding: 0;
       font-family: 'Roboto', sans-serif;
-      background-color: #2c3e50; /* Colore di riempimento per le parti non coperte dallo sfondo */
+      background-color: #ffffff; /* Sfondo generale bianco */
     }
 
     main {
       background-image: url('index_sfondo.png');
       background-repeat: no-repeat;
-      background-size: 85% auto; /* Dimensione ridotta dello sfondo */
-      background-position: center bottom; /* Posizionato più in basso */
+      background-size: 75% auto; /* Dimensione leggermente più compatta */
+      background-position: center calc(100% + 50px); /* Spostato ancora più in basso */
+      background-color: #ffffff; /* Spazio fuori dalla figura bianco */
       min-height: 100vh;
-      padding: 100px 30px 50px 30px;
+      padding: 100px 30px 120px 30px;
       position: relative;
     }
 
@@ -51,17 +52,16 @@
       position: absolute;
       bottom: 10px;
       right: 10px;
-      color: white;
+      color: #333333; /* Cambiato in scuro per leggibilità sul bianco */
       font-family: "Calisto MT", serif;
       font-size: 15px;
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     }
 
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: rgba(44, 62, 80, 0.9);
+      background-color: rgba(44, 62, 80, 0.95);
       color: white;
       padding: 10px 30px;
       position: sticky;
@@ -107,40 +107,30 @@
 
     main h1 {
       text-align: center;
-      color: white;
-      text-shadow: 1px 1px 4px #000;
+      color: #2c3e50;
       margin-bottom: 10px;
     }
 
     main p {
       text-align: center;
-      color: white;
-      text-shadow: 1px 1px 3px #000;
+      color: #333333;
       margin-bottom: 50px;
     }
 
     main p.work-in-progress {
       text-align: center;
-      color: white;
-      text-shadow: 1px 1px 3px #000;
-      transform: translateY(-1cm);
+      color: #e74c3c;
       margin-bottom: 20px;
     }
 
     main p.bio-quote {
       text-align: center;
-      color: white;
-      text-shadow: 1px 1px 4px #000;
+      color: #2c3e50;
       max-width: 800px;
       margin: 0 auto 50px auto;
       font-size: 1.1rem;
       line-height: 1.6;
       font-style: italic;
-      transform: translateY(-0.5cm);
-    }
-
-    .titles-block {
-      margin-top: -3cm;
     }
 
     .grid-container {
@@ -149,13 +139,13 @@
       gap: 30px;
       max-width: 1000px;
       margin: auto;
-      transform: translateY(-1cm);
     }
 
     .grid-item {
-      background-color: rgba(255, 255, 255, 0.85);
+      background-color: rgba(255, 255, 255, 0.95);
       padding: 20px;
       border-radius: 10px;
+      border: 1px solid #e0e0e0;
       text-decoration: none;
       color: #333;
       transition: transform 0.3s, box-shadow 0.3s;
@@ -163,7 +153,7 @@
 
     .grid-item:hover {
       transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
     }
 
     .grid-item h2 {
@@ -191,24 +181,12 @@
       text-decoration: underline;
     }
 
-    .bold-text {
-      font-weight: bold;
-    }
-
     .italic-text {
       font-style: italic;
     }
 
     .underline-text {
       text-decoration: underline;
-    }
-
-    #welcome-title {
-      margin-top: 2cm;
-    }
-
-    #explore-title {
-      margin-top: 0cm;
     }
   </style>
 </head>
@@ -231,8 +209,8 @@
 
 <main>
   <div class="titles-block">
-    <h1 id="welcome-title">Welcome to the website of Ilaria Cunico</h1>
-    <p id="explore-title">Explore my research areas and interests</p>
+    <h1>Welcome to the website of Ilaria Cunico</h1>
+    <p>Explore my research areas and interests</p>
     <p class="work-in-progress"><strong>The work on this website is in progress.</strong></p>
     <p class="bio-quote">"I study the fundamental mathematical laws, properties, and dynamics of ecosystems."</p>
   </div>
@@ -255,7 +233,6 @@
 
 <footer>
   <p>&copy; 2026 Ilaria Cunico | <a href="mailto:icunico@ogs.it">icunico@ogs.it</a></p>
-  
   <div id="visitor-counter" style="margin-top: 15px;"></div>
 </footer>
 
