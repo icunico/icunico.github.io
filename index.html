@@ -42,10 +42,10 @@
       background-image: url('index_sfondo.png');
       background-repeat: no-repeat;
       background-size: 50% auto;
-      /* Spinta in basso di ulteriori ~5cm (da 320px a 509px) */
       background-position: center calc(100% + 509px);
       min-height: 100vh;
-      padding: 80px 30px 220px 30px;
+      /* Ridotto padding-top da 80px a 30px per portare su tutte le scritte */
+      padding: 30px 30px 220px 30px;
       position: relative;
       box-sizing: border-box;
     }
@@ -115,7 +115,8 @@
     main p {
       text-align: center;
       color: #333333;
-      margin-bottom: 30px;
+      /* Ridotto margine inferiore per compattare verso l'alto */
+      margin-bottom: 15px;
     }
 
     main p.work-in-progress {
