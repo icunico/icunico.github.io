@@ -12,13 +12,13 @@
   <meta charset="UTF-8">
   <title>River Ecosystem — Ilaria Cunico</title>
 
-  <meta name="description" content="River Ecosystem research by Ilaria Cunico: River Ecomorphodynamic Models Exhibit Features of Nonlinear Dynamics and Chaos.">
-  <meta name="keywords" content="Ilaria Cunico, river ecosystem, ecomorphodynamics, nonlinear dynamics, chaos, vegetation, sediments, hydrology">
+  <meta name="description" content="River Ecosystem research by Ilaria Cunico: Nonlinear dynamics, chaos, and multistability in river ecomorphodynamic models.">
+  <meta name="keywords" content="Ilaria Cunico, river ecosystem, ecomorphodynamics, nonlinear dynamics, chaos, multistability, bistability, vegetation, sediments">
   <meta name="author" content="Ilaria Cunico">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="River Ecosystem — Ilaria Cunico">
-  <meta property="og:description" content="River Ecomorphodynamic Models Exhibit Features of Nonlinear Dynamics and Chaos.">
+  <meta property="og:description" content="River Ecomorphodynamic Models Exhibit Features of Nonlinear Dynamics, Chaos, and Multi-stability.">
   <meta property="og:image" content="riverecosystem.png">
   <meta property="og:url" content="https://icunico.github.io/river_ecosystem.html">
 
@@ -117,7 +117,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 40px;
+      gap: 50px;
     }
 
     /* COLONNA SINISTRA: IMMAGINE */
@@ -129,47 +129,47 @@
 
     .image-column img {
       width: 100%;
-      max-width: 500px;
+      max-width: 480px;
       height: auto;
       object-fit: contain;
     }
 
-    /* COLONNA DESTRA: CONTENUTO E LINK */
+    /* COLONNA DESTRA: TESTI E BOTTONI */
     .text-column {
-      flex: 1;
+      flex: 1.2;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
     }
 
-    .main-description {
+    .paper-block {
+      margin-bottom: 25px;
+      width: 100%;
+    }
+
+    .description-text {
       color: #333333;
-      font-size: 1.2rem;
-      line-height: 1.6;
-      margin-bottom: 15px;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      margin-bottom: 12px;
       font-weight: 500;
     }
 
-    .sub-description {
-      color: #555555;
-      font-size: 1.05rem;
-      line-height: 1.5;
-      margin-bottom: 30px;
-    }
-
-    /* BOTTONE LINK ALL'ARTICOLO WILEY */
+    /* BOTTONI LINK AGLI ARTICOLI */
     .paper-btn {
       display: inline-block;
       background-color: transparent;
       color: #2c3e50;
-      padding: 14px 24px;
+      padding: 12px 20px;
       border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
-      font-size: 1rem;
+      font-size: 0.95rem;
       border: 2px solid #2c3e50;
       transition: all 0.3s ease;
       line-height: 1.4;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     .paper-btn:hover {
@@ -184,7 +184,7 @@
       font-size: 0.85rem;
       font-weight: normal;
       opacity: 0.8;
-      margin-top: 6px;
+      margin-top: 4px;
     }
 
     /* RESPONSIVE DESIGN PER SMARTPHONE */
@@ -241,20 +241,31 @@
       <img src="riverecosystem.png" alt="River Ecosystem Dynamics">
     </div>
 
-    <!-- TESTI E LINK A DESTRA -->
+    <!-- TESTI E BOTTONI A DESTRA -->
     <div class="text-column">
-      <p class="main-description">
-        Discover how interactions between water, sediments, and vegetation induce chaos in river ecosystems.
-      </p>
       
-      <p class="sub-description">
-        Discover how these interactions generate bistability and multistability within the system.
-      </p>
+      <!-- PRIMO ARTICOLO: CAOS -->
+      <div class="paper-block">
+        <p class="description-text">
+          Discover how interactions between water, sediments, and vegetation induce chaos in river ecosystems.
+        </p>
+        <a href="https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024GL108745" target="_blank" rel="noopener noreferrer" class="paper-btn">
+          📖 Read Article: River Ecomorphodynamic Models Exhibit Features of Nonlinear Dynamics and Chaos
+          <span class="journal-info">Cunico (2024) — Geophysical Research Letters | Wiley Online Library</span>
+        </a>
+      </div>
 
-      <a href="https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024GL108745" target="_blank" rel="noopener noreferrer" class="paper-btn">
-        📖 Read Article: River Ecomorphodynamic Models Exhibit Features of Nonlinear Dynamics and Chaos
-        <span class="journal-info">Cunico (2024) — Geophysical Research Letters | Wiley Online Library</span>
-      </a>
+      <!-- SECONDO ARTICOLO: BISTABILITÀ / MULTISTABILITÀ -->
+      <div class="paper-block">
+        <p class="description-text">
+          Discover how these interactions generate bistability and multistability within the system.
+        </p>
+        <a href="https://iopscience.iop.org/article/10.1088/1748-9326/ad30b4" target="_blank" rel="noopener noreferrer" class="paper-btn">
+          📖 Read Article: Multi-stability in a spatial river ecosystem model
+          <span class="journal-info">Cunico et al. — Environmental Research Letters | IOPscience</span>
+        </a>
+      </div>
+
     </div>
   </div>
 </main>
