@@ -41,12 +41,11 @@
       background-color: #ffffff !important;
       background-image: url('index_sfondo.png');
       background-repeat: no-repeat;
-      /* Immagine resa più grande (~45%) */
       background-size: min(45%, 750px) auto;
-      /* Immagine posizionata più in alto */
-      background-position: center 330px;
+      /* IMMAGINE ALZATA A 170px */
+      background-position: calc(50% + 0.5cm) 170px;
       min-height: 80vh;
-      padding: 30px 30px 220px 30px; /* Padding superiore ridotto per alzare tutto */
+      padding: 30px 30px 220px 30px;
       position: relative;
       box-sizing: border-box;
     }
@@ -109,7 +108,7 @@
       color: #1abc9c;
     }
 
-    /* TITOLI E TESTI (Alzati con margini ridotti) */
+    /* TITOLI E TESTI */
     main h1 {
       text-align: center;
       color: #2c3e50;
@@ -133,7 +132,7 @@
       font-style: italic;
     }
 
-    /* CONTENITORE BOTTONI (Spostati verso l'alto) */
+    /* CONTENITORE BOTTONI */
     .grid-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -198,7 +197,7 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="river_ecosystem.html">River Ecosystem</a></li>
       <li><a href="marine_ecosystem.html">Marine Ecosystem</a></li>
-      <li><a href="mailto:icunico@ogs.it" style="color: #1abc9c;">Contact</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 </header>
@@ -221,7 +220,7 @@
 </main>
 
 <footer>
-  <p>&copy; 2026 Ilaria Cunico | <a href="mailto:icunico@ogs.it">icunico@ogs.it</a></p>
+  <p>&copy; 2026 Ilaria Cunico | <a href="contact.html">Contact</a></p>
   <div id="visitor-counter" style="margin-top: 15px;"></div>
 </footer>
 
