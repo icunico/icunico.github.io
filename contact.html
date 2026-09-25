@@ -50,12 +50,13 @@
       align-items: center;
     }
 
+    /* FOTO PROFILO ROTONDA */
     header img.profile-img {
       width: 60px !important;
       height: 60px !important;
       min-width: 60px !important;
       min-height: 60px !important;
-      border-radius: %;
+      border-radius: 50% !important;
       object-fit: cover;
       margin-right: 15px;
       display: inline-block !important;
@@ -81,7 +82,7 @@
     nav ul li a {
       color: white;
       text-decoration: none;
-      font-weight: 0;
+      font-weight: 500;
       transition: color 0.3s;
     }
 
@@ -104,25 +105,29 @@
       justify-content: center;
     }
 
-    /* CONTENITORE INTESTAZIONE CON IMMAGINE E TITOLO */
+    /* CONTENITORE INTESTAZIONE CENTRATO CON IMMAGINE A DESTRA */
     .title-container {
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 15px;
+      width: 100%;
       margin-bottom: 15px;
-    }
-
-    .contact-title-img {
-      width: 200px;
-      height: 200px;
-      object-fit: contain;
     }
 
     main h1 {
       color: #2c3e50;
       font-size: 2.2rem;
       margin: 0;
+      text-align: center;
+    }
+
+    .contact-title-img {
+      width: 180px;
+      height: 180px;
+      object-fit: contain;
+      position: absolute;
+      left: calc(50% + 140px); /* Posiziona l'immagine subito a destra del titolo centrato */
     }
 
     main p.subtitle {
@@ -170,10 +175,15 @@
     }
 
     /* RESPONSIVE PER SMARTPHONE */
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
       .title-container {
         flex-direction: column;
-        gap: 10px;
+      }
+      .contact-title-img {
+        position: static;
+        width: 120px;
+        height: 120px;
+        margin-top: 10px;
       }
     }
 
@@ -210,10 +220,10 @@
 </header>
 
 <main>
-  <!-- INTESTAZIONE CON IMMAGINE E TITOLO -->
+  <!-- INTESTAZIONE CON TITOLO AL CENTRO E IMMAGINE A DESTRA -->
   <div class="title-container">
-    <img src="contatti.png" alt="Contact Icon" class="contact-title-img">
     <h1>Get in Touch</h1>
+    <img src="contatti.png" alt="Contact Icon" class="contact-title-img">
   </div>
 
   <p class="subtitle">
