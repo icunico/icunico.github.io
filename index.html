@@ -41,9 +41,7 @@
       background-color: #ffffff !important;
       background-image: url('index_sfondo.png');
       background-repeat: no-repeat;
-      /* Immagine ridotta a 1/3 della dimensione precedente (10% / max 300px) */
       background-size: min(10%, 300px) auto;
-      /* Posizionata al centro, subito sotto i pulsanti */
       background-position: center 360px;
       min-height: 80vh;
       padding: 60px 30px 180px 30px;
@@ -51,11 +49,12 @@
       box-sizing: border-box;
     }
 
+    /* BARRA SUPERIORE: Blu brillante */
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: #2c3e50;
+      background-color: #1565c0;
       color: white;
       padding: 10px 30px;
       position: sticky;
@@ -95,12 +94,12 @@
     }
 
     nav ul li a:hover {
-      color: #1abc9c;
+      color: #80deea;
     }
 
     main h1 {
       text-align: center;
-      color: #2c3e50;
+      color: #1565c0;
       margin-bottom: 10px;
     }
 
@@ -118,7 +117,7 @@
 
     main p.bio-quote {
       text-align: center;
-      color: #2c3e50;
+      color: #1565c0;
       max-width: 800px;
       margin: 0 auto 40px auto;
       font-size: 1.1rem;
@@ -134,14 +133,14 @@
       margin: auto;
     }
 
+    /* BOTTONI: Sfondo Verde Acqua */
     .grid-item {
-      background-color: rgba(255, 255, 255, 0.9);
+      background-color: #00b4d8;
       padding: 30px 20px;
       border-radius: 10px;
-      border: 1px solid #e0e0e0;
+      border: 2px solid #0096c7;
       text-decoration: none;
-      color: #333;
-      transition: transform 0.3s, box-shadow 0.3s;
+      transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -150,26 +149,28 @@
     }
 
     .grid-item:hover {
+      background-color: #0096c7;
       transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      box-shadow: 0 10px 20px rgba(0, 180, 216, 0.4);
     }
 
     .grid-item h2 {
       margin: 0;
-      color: #2c3e50;
-      text-decoration: underline;
+      color: #ffffff;
+      text-decoration: none;
       text-align: center;
     }
 
+    /* BARRA INFERIORE: Blu brillante */
     footer {
       text-align: center;
       padding: 15px;
-      background-color: #2c3e50;
+      background-color: #1565c0;
       color: white;
     }
 
     footer a {
-      color: #1abc9c;
+      color: #80deea;
       text-decoration: none;
       font-weight: bold;
     }
@@ -191,7 +192,7 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="river_ecosystem.html">River Ecosystem</a></li>
       <li><a href="marine_ecosystem.html">Marine Ecosystem</a></li>
-      <li><a href="mailto:icunico@ogs.it" style="color: #1abc9c;">Contact</a></li>
+      <li><a href="mailto:icunico@ogs.it" style="color: #80deea;">Contact</a></li>
     </ul>
   </nav>
 </header>
@@ -206,10 +207,10 @@
 
   <div class="grid-container">
     <a href="river_ecosystem.html" class="grid-item">
-      <h2 class="underline-text">River Ecosystem</h2>
+      <h2>River Ecosystem</h2>
     </a>
     <a href="marine_ecosystem.html" class="grid-item">
-      <h2 class="underline-text">Marine Ecosystem</h2>
+      <h2>Marine Ecosystem</h2>
     </a>
   </div>
 </main>
@@ -228,7 +229,7 @@
     img.alt = 'Visitor Counter';
     document.getElementById('visitor-counter').appendChild(img);
   } else {
-    document.getElementById('visitor-counter').innerHTML = '<span style="font-size: 12px; color: #1abc9c;">(Visita proprietario - Non conteggiata)</span>';
+    document.getElementById('visitor-counter').innerHTML = '<span style="font-size: 12px; color: #80deea;">(Visita proprietario - Non conteggiata)</span>';
   }
 </script>
 
