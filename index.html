@@ -41,17 +41,16 @@
       background-color: #ffffff !important;
       background-image: url('index_sfondo.png');
       background-repeat: no-repeat;
-      /* Immagine di sfondo raddoppiata (22%) */
-      background-size: min(22%, 500px) auto;
-      /* Posizione abbassata a 460px per lasciar spazio ai bottoni */
-      background-position: center 460px;
+      /* Immagine di sfondo resa più grande (~33%) */
+      background-size: min(33%, 650px) auto;
+      background-position: center 480px;
       min-height: 80vh;
-      padding: 60px 30px 240px 30px;
+      padding: 60px 30px 260px 30px;
       position: relative;
       box-sizing: border-box;
     }
 
-    /* BARRA SUPERIORE: Ritorno al Blu Scuro */
+    /* BARRA SUPERIORE: Blu Scuro */
     header {
       display: flex;
       justify-content: space-between;
@@ -64,13 +63,15 @@
       z-index: 1000;
     }
 
+    /* Foto profilo ridimensionata a 60px per rientrare nella barra */
     header img {
-      width: 90px;
-      height: 90px;
+      width: 60px;
+      height: 60px;
       border-radius: 50%;
       object-fit: cover;
       margin-right: 15px;
       display: block;
+      border: 2px solid rgba(255, 255, 255, 0.8);
     }
 
     header h1 {
@@ -97,7 +98,7 @@
     }
 
     nav ul li a:hover {
-      color: #00e676;
+      color: #00b4d8;
     }
 
     main h1 {
@@ -136,12 +137,12 @@
       margin: auto;
     }
 
-    /* BOTTONI: Verde più acceso / smeraldo */
+    /* BOTTONI: Verde Acqua / Azzurro (Aqua-Cyan) */
     .grid-item {
-      background-color: #00a86b;
+      background-color: #00b4d8;
       padding: 30px 20px;
       border-radius: 10px;
-      border: 2px solid #008f5a;
+      border: 2px solid #0096c7;
       text-decoration: none;
       transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
       display: flex;
@@ -152,9 +153,10 @@
     }
 
     .grid-item:hover {
-      background-color: #008f5a;
+      background-color: #0077b6;
+      border-color: #0077b6;
       transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0, 168, 107, 0.4);
+      box-shadow: 0 10px 20px rgba(0, 180, 216, 0.4);
     }
 
     .grid-item h2 {
@@ -164,7 +166,7 @@
       text-align: center;
     }
 
-    /* BARRA INFERIORE: Ritorno al Blu Scuro */
+    /* BARRA INFERIORE: Blu Scuro */
     footer {
       text-align: center;
       padding: 15px;
@@ -173,7 +175,7 @@
     }
 
     footer a {
-      color: #00e676;
+      color: #00b4d8;
       text-decoration: none;
       font-weight: bold;
     }
@@ -195,7 +197,7 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="river_ecosystem.html">River Ecosystem</a></li>
       <li><a href="marine_ecosystem.html">Marine Ecosystem</a></li>
-      <li><a href="mailto:icunico@ogs.it" style="color: #00e676;">Contact</a></li>
+      <li><a href="mailto:icunico@ogs.it" style="color: #00b4d8;">Contact</a></li>
     </ul>
   </nav>
 </header>
@@ -232,7 +234,7 @@
     img.alt = 'Visitor Counter';
     document.getElementById('visitor-counter').appendChild(img);
   } else {
-    document.getElementById('visitor-counter').innerHTML = '<span style="font-size: 12px; color: #00e676;">(Visita proprietario - Non conteggiata)</span>';
+    document.getElementById('visitor-counter').innerHTML = '<span style="font-size: 12px; color: #00b4d8;">(Visita proprietario - Non conteggiata)</span>';
   }
 </script>
 
