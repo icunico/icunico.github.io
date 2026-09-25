@@ -19,7 +19,7 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Marine Ecosystem — Ilaria Cunico">
   <meta property="og:description" content="Chaos and stability in the marine trophic network: the importance of interactions over complexity.">
-  <meta property="og:image" content="marinecosystem.png">
+  <meta property="og:image" content="marine_ecosystem.png">
   <meta property="og:url" content="https://icunico.github.io/marine_ecosystem.html">
 
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -93,9 +93,10 @@
     /* CONTENUTO PRINCIPALE CON SFONDO */
     main {
       background-color: #ffffff !important;
-      background-image: url('marinecosystem.png');
+      background-image: url('marine_ecosystem.png');
       background-repeat: no-repeat;
       background-size: min(50%, 750px) auto;
+      /* Posizione dello sfondo: centrato orizzontalmente, posizionato sotto i testi */
       background-position: center 220px;
       min-height: 85vh;
       padding: 30px 30px 100px 30px;
@@ -127,40 +128,40 @@
       line-height: 1.5;
     }
 
-    /* PULSANTE PREPRINT (ALZATO E SENZA COLORE) */
+    /* PULSANTE PREPRINT SOTTO L'IMMAGINE */
     .preprint-container {
-      margin-top: 280px; /* Ridotto per alzare il bottone */
+      /* Margine superiore ampio per scavalcare lo spazio dell'immagine di sfondo */
+      margin-top: 480px; 
       text-align: center;
       z-index: 10;
     }
 
     .preprint-btn {
       display: inline-block;
-      background-color: transparent; /* Toglila tinta di sfondo */
-      color: #2c3e50; /* Colore del testo scuro/elegante */
-      padding: 12px 25px;
-      border-radius: 8px;
+      background-color: #1abc9c;
+      color: #ffffff;
+      padding: 15px 30px;
+      border-radius: 10px;
       text-decoration: none;
       font-weight: bold;
-      font-size: 1.05rem;
-      border: 2px solid #2c3e50; /* Bordo pulito anziché sfondo pieno */
+      font-size: 1.1rem;
+      box-shadow: 0 4px 12px rgba(26, 188, 156, 0.3);
       transition: all 0.3s ease;
       max-width: 700px;
       line-height: 1.4;
     }
 
     .preprint-btn:hover {
-      background-color: rgba(44, 62, 80, 0.05); /* Effetto delicato al passaggio del mouse */
-      color: #1abc9c;
-      border-color: #1abc9c;
-      transform: translateY(-2px);
+      background-color: #16a085;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 18px rgba(26, 188, 156, 0.5);
     }
 
     .preprint-btn span.arxiv-id {
       display: block;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       font-weight: normal;
-      opacity: 0.8;
+      opacity: 0.9;
       margin-top: 4px;
     }
 
@@ -199,7 +200,7 @@
 <main>
   <div class="titles-block">
     <h1>Marine Ecosystem Research</h1>
-    <p class="subtitle">Discover how species interactions and feedbacks influence chaos and stability in trophic chains.</p>
+    <p class="subtitle">Exploring chaos, stability, and interaction dynamics within marine trophic networks.</p>
   </div>
 
   <!-- LINK PREPRINT POSIZIONATO SOTTO L'IMMAGINE DI SFONDO -->
@@ -214,6 +215,9 @@
 <footer>
   <p>&copy; 2026 Ilaria Cunico | <a href="contact.html">Contact</a></p>
 </footer>
+
+</body>
+</html>
 
 </body>
 </html>
