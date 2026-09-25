@@ -95,9 +95,13 @@
       background-color: #ffffff !important;
       background-image: url('marinecosystem.png');
       background-repeat: no-repeat;
-      background-size: min(50%, 750px) auto;
-      /* Posizione dello sfondo: centrato orizzontalmente, posizionato sotto i testi */
-      background-position: center 220px;
+
+      /* DIMENSIONE IMMAGINE RIMPICCIOLITA (Max 450px) */
+      background-size: min(35%, 450px) auto;
+
+      /* POSIZIONE IMMAGINE DI SFONDO (Centrata, a 180px dall'alto) */
+      background-position: center 180px;
+
       min-height: 85vh;
       padding: 30px 30px 100px 30px;
       position: relative;
@@ -128,10 +132,10 @@
       line-height: 1.5;
     }
 
-    /* PULSANTE PREPRINT SOTTO L'IMMAGINE */
+    /* PULSANTE PREPRINT ALZATO */
     .preprint-container {
-      /* Margine superiore ampio per scavalcare lo spazio dell'immagine di sfondo */
-      margin-top: 480px; 
+      /* MARGINE RIDOTTO DA 480px A 380px PER ALZARE IL BOTTONE */
+      margin-top: 380px; 
       text-align: center;
       z-index: 10;
     }
@@ -215,9 +219,6 @@
 <footer>
   <p>&copy; 2026 Ilaria Cunico | <a href="contact.html">Contact</a></p>
 </footer>
-
-</body>
-</html>
 
 </body>
 </html>
