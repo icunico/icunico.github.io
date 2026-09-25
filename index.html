@@ -19,7 +19,7 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Home — Ilaria Cunico">
   <meta property="og:description" content="Sito ufficiale di Ilaria Cunico: ricerche e interessi sui sistemi complessi, dinamiche ecologiche di fiume e marine.">
-  <meta property="og:image" content="profilo.jpg">
+  <meta property="og:image" content="profilo.png">
   <meta property="og:url" content="https://www.tuosito.com/index.html">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -42,7 +42,7 @@
       background-image: url('index_sfondo.png');
       background-repeat: no-repeat;
       background-size: 50% auto;
-      background-position: center calc(100% + 509px);
+      background-position: center bottom 40px;
       min-height: 100vh;
       padding: 80px 30px 220px 30px;
       position: relative;
@@ -134,12 +134,17 @@
 
     .grid-item {
       background-color: rgba(255, 255, 255, 0.9);
-      padding: 20px;
+      padding: 30px 20px;
       border-radius: 10px;
       border: 1px solid #e0e0e0;
       text-decoration: none;
       color: #333;
       transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 90px;
+      box-sizing: border-box;
     }
 
     .grid-item:hover {
@@ -148,9 +153,10 @@
     }
 
     .grid-item h2 {
-      margin-top: 0;
+      margin: 0;
       color: #2c3e50;
       text-decoration: underline;
+      text-align: center;
     }
 
     footer {
@@ -166,10 +172,6 @@
       font-weight: bold;
     }
 
-    .italic-text {
-      font-style: italic;
-    }
-
     .underline-text {
       text-decoration: underline;
     }
@@ -179,7 +181,7 @@
 
 <header>
   <div style="display:flex; align-items:center;">
-    <img src="profilo.jpg" alt="Ilaria Cunico">
+    <img src="profilo.png" alt="Ilaria Cunico">
     <h1>Ilaria Cunico</h1>
   </div>
   <nav>
@@ -203,11 +205,9 @@
   <div class="grid-container">
     <a href="river_ecosystem.html" class="grid-item">
       <h2 class="underline-text">River Ecosystem</h2>
-      <p class="italic-text">Research and Publications</p>
     </a>
     <a href="marine_ecosystem.html" class="grid-item">
       <h2 class="underline-text">Marine Ecosystem</h2>
-      <p class="italic-text">Research and Publications</p>
     </a>
   </div>
 </main>
