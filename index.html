@@ -260,6 +260,13 @@
     const img = document.createElement('img');
     img.src = 'https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Ficunico.github.io&count_bg=%231ABC9C&title_bg=%232C3E50&icon=&icon_color=%23E7E7E7&title=views&edge_flat=false';
     img.alt = 'Visitor Counter';
+    img.style.display = 'inline-block';
+
+    // Gestione dell'errore di caricamento dell'immagine
+    img.onerror = function() {
+      document.getElementById('visitor-counter').style.display = 'none';
+    };
+
     document.getElementById('visitor-counter').appendChild(img);
   } else {
     document.getElementById('visitor-counter').innerHTML = '<span style="font-size: 12px; color: #1abc9c;">(Visita proprietario - Non conteggiata)</span>';
