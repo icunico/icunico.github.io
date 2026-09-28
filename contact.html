@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- VERIFICA GOOGLE SEARCH CONSOLE -->
+  <meta name="google-site-verification" content="TTn2AAHtxdLzb4V3MLGkHp5bVC_rB6msN7tAwHhapBQ" />
+
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PXE62W3QKL"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -11,19 +14,50 @@
   
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact — Ilaria Cunico</title>
+  <title>Ilaria Cunico — Researcher in Complex Systems & Ecology</title>
 
-  <meta name="description" content="Contact Ilaria Cunico: Get in touch via email or LinkedIn for academic research and collaborations.">
-  <meta name="keywords" content="Ilaria Cunico, contact, email, LinkedIn, research collaboration">
+  <meta name="description" content="Official website of Ilaria Cunico. Research and interests in complex systems, river dynamics, and marine ecological systems.">
+  <meta name="keywords" content="Ilaria Cunico, ilaria cunico, Ilaria Cunico research, Ilaria Cunico ricerca, complex systems, river ecosystems, marine ecosystems, ecology, oceanography, environmental science, research">
   <meta name="author" content="Ilaria Cunico">
+  <link rel="canonical" href="https://icunico.github.io/">
 
+  <!-- OPEN GRAPH / FACEBOOK / LINKEDIN -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Contact — Ilaria Cunico">
-  <meta property="og:description" content="Get in touch with Ilaria Cunico via Email or LinkedIn.">
-  <meta property="og:url" content="https://icunico.github.io/contact.html">
+  <meta property="og:title" content="Ilaria Cunico — Researcher in Complex Systems & Ecology">
+  <meta property="og:description" content="Official website of Ilaria Cunico. Research and interests in complex systems, river dynamics, and marine ecological systems.">
+  <meta property="og:image" content="profilo2.jpg">
+  <meta property="og:url" content="https://icunico.github.io/">
 
-  <link rel="canonical" href="https://icunico.github.io/contact.html">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- TWITTER -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ilaria Cunico — Researcher in Complex Systems & Ecology">
+  <meta name="twitter:description" content="Official website of Ilaria Cunico. Research and interests in complex systems, river dynamics, and marine ecological systems.">
+  <meta name="twitter:image" content="index_sfondo.png">
+
+  <!-- STRUCTURED DATA FOR GOOGLE (SCHEMA.ORG) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ilaria Cunico",
+    "alternateName": ["Ilaria Cunico research", "Ilaria Cunico ricerca"],
+    "url": "https://icunico.github.io/",
+    "jobTitle": "Researcher",
+    "knowsAbout": [
+      "Complex Systems",
+      "River Ecosystems",
+      "Marine Ecosystems",
+      "Ecological Dynamics",
+      "Ecology",
+      "Oceanography"
+    ],
+    "sameAs": [
+      "https://www.linkedin.com/in/ilaria-cunico-b8639a19b/?skipRedirect=true"
+    ]
+  }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
     html, body {
@@ -31,6 +65,18 @@
       padding: 0;
       font-family: 'Roboto', sans-serif;
       background-color: #ffffff !important;
+    }
+
+    main {
+      background-color: #ffffff !important;
+      background-image: url('index_sfondo.png');
+      background-repeat: no-repeat;
+      background-size: min(45%, 750px) auto;
+      background-position: calc(50% + 0.4cm) 240px;
+      min-height: 80vh;
+      padding: 30px 30px 220px 30px;
+      position: relative;
+      box-sizing: border-box;
     }
 
     /* BARRA SUPERIORE */
@@ -52,13 +98,12 @@
       align-items: center;
     }
 
-    /* FOTO PROFILO ROTONDA */
     header img.profile-img {
       width: 60px !important;
       height: 60px !important;
       min-width: 60px !important;
       min-height: 60px !important;
-      border-radius: 50% !important;
+      border-radius: 50%;
       object-fit: cover;
       margin-right: 15px;
       display: inline-block !important;
@@ -92,102 +137,66 @@
       color: #1abc9c;
     }
 
-    /* CONTENUTO PRINCIPALE */
-    main {
-      background-color: #ffffff !important;
-      min-height: 80vh;
-      padding: 60px 30px 80px 30px;
-      box-sizing: border-box;
-      max-width: 800px;
-      margin: 0 auto;
+    /* TITOLI E TESTI */
+    main h1 {
       text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      color: #2c3e50;
+      margin-top: 10px;
+      margin-bottom: 5px;
     }
 
-    /* CONTENITORE INTESTAZIONE CENTRATO CON IMMAGINE A DESTRA */
-    .title-container {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
+    main p {
+      text-align: center;
+      color: #333333;
       margin-bottom: 15px;
     }
 
-    main h1 {
-      color: #2c3e50;
-      font-size: 2.2rem;
-      margin: 0;
+    main p.bio-quote {
       text-align: center;
+      color: #2c3e50;
+      max-width: 800px;
+      margin: 0 auto 20px auto;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      font-style: italic;
     }
 
-    /* IMMAGINE DELLA FARFALLA RADDOPPIATA A 360px */
-    .contact-title-img {
-      width: 360px;
-      height: 360px;
-      object-fit: contain;
-      position: absolute;
-      left: calc(50% + 160px); /* Posizionamento calcolato per la nuova dimensione */
+    /* CONTENITORE BOTTONI */
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      max-width: 900px;
+      margin: 0 auto 30px auto;
     }
 
-    main p.subtitle {
-      color: #555555;
-      font-size: 1.15rem;
-      line-height: 1.6;
-      margin-bottom: 40px;
-      max-width: 600px;
-    }
-
-    /* BLOCCO CONTATTI */
-    .contact-links {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      width: 100%;
-      max-width: 480px;
-    }
-
-    .contact-card {
+    /* BOTTONI */
+    .grid-item {
+      background-color: #1abc9c;
+      padding: 20px 20px;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 16px 24px;
-      border-radius: 8px;
+      min-height: 75px;
+      box-sizing: border-box;
+    }
+
+    .grid-item:hover {
+      background-color: #16a085;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 15px rgba(26, 188, 156, 0.4);
+    }
+
+    .grid-item h2 {
+      margin: 0;
+      color: #ffffff;
       text-decoration: none;
-      color: #2c3e50;
-      border: 2px solid #2c3e50;
+      text-align: center;
+      font-size: 1.4rem;
       font-weight: bold;
-      font-size: 1.05rem;
-      transition: all 0.3s ease;
-      background-color: transparent;
-    }
-
-    .contact-card:hover {
-      background-color: rgba(44, 62, 80, 0.05);
-      color: #1abc9c;
-      border-color: #1abc9c;
-      transform: translateY(-2px);
-    }
-
-    .contact-icon {
-      font-size: 1.3rem;
-      margin-right: 12px;
-    }
-
-    /* RESPONSIVE PER SMARTPHONE */
-    @media (max-width: 768px) {
-      .title-container {
-        flex-direction: column;
-      }
-      .contact-title-img {
-        position: static;
-        width: 200px;
-        height: 200px;
-        margin-top: 10px;
-      }
     }
 
     /* BARRA INFERIORE */
@@ -214,41 +223,48 @@
   </div>
   <nav>
     <ul>
-      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html" style="color: #1abc9c;">Home</a></li>
       <li><a href="river_ecosystem.html">River Ecosystem</a></li>
       <li><a href="marine_ecosystem.html">Marine Ecosystem</a></li>
-      <li><a href="contact.html" style="color: #1abc9c;">Contact</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 </header>
 
 <main>
-  <!-- INTESTAZIONE CON TITOLO AL CENTRO E IMMAGINE A DESTRA -->
-  <div class="title-container">
-    <h1>Get in Touch</h1>
-    <img src="contatti.png" alt="Contact Icon" class="contact-title-img">
+  <div class="titles-block">
+    <h1>Welcome to the website of Ilaria Cunico</h1>
+    <p>Explore my research areas and interests</p>
+    <p class="bio-quote">"I study the fundamental mathematical laws, properties, and dynamics of ecosystems."</p>
   </div>
 
-  <p class="subtitle">
-    Feel free to reach out for research inquiries, collaborations, or questions about my work.
-  </p>
-
-  <div class="contact-links">
-    <!-- EMAIL -->
-    <a href="mailto:icunico@ogs.it" class="contact-card">
-      <span class="contact-icon">✉️</span> Email: icunico@ogs.it
+  <div class="grid-container">
+    <a href="river_ecosystem.html" class="grid-item">
+      <h2>River Ecosystem</h2>
     </a>
-
-    <!-- LINKEDIN -->
-    <a href="https://www.linkedin.com/in/ilaria-cunico-b8639a19b/?skipRedirect=true" target="_blank" rel="noopener noreferrer" class="contact-card">
-      <span class="contact-icon">🔗</span> LinkedIn Profile
+    <a href="marine_ecosystem.html" class="grid-item">
+      <h2>Marine Ecosystem</h2>
     </a>
   </div>
 </main>
 
 <footer>
   <p>&copy; 2026 Ilaria Cunico | <a href="contact.html">Contact</a></p>
+  <div id="visitor-counter" style="margin-top: 15px;"></div>
 </footer>
+
+<script>
+  const isOwner = localStorage.getItem('ignore_my_visits') === 'true';
+
+  if (!isOwner && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+    const img = document.createElement('img');
+    img.src = 'https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Ficunico.github.io&count_bg=%231ABC9C&title_bg=%232C3E50&icon=&icon_color=%23E7E7E7&title=views&edge_flat=false';
+    img.alt = 'Visitor Counter';
+    document.getElementById('visitor-counter').appendChild(img);
+  } else {
+    document.getElementById('visitor-counter').innerHTML = '<span style="font-size: 12px; color: #1abc9c;">(Visita proprietario - Non conteggiata)</span>';
+  }
+</script>
 
 </body>
 </html>
