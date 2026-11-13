@@ -34,7 +34,7 @@
       margin: 0;
       padding: 0;
       font-family: 'Roboto', sans-serif;
-      background-color: #f8f7f5 !important;
+      background-color: #efede9 !important;
       overflow-x: hidden;
     }
 
@@ -43,7 +43,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: rgba(44, 62, 80, 0.92);
+      background-color: rgba(44, 62, 80, 0.94);
       color: white;
       padding: 10px 30px;
       position: sticky;
@@ -100,21 +100,23 @@
     .contact-wrapper {
       position: relative;
       width: 100%;
-      min-height: 82vh;
+      min-height: calc(100vh - 140px);
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
+      background-color: #efede9;
     }
 
     #network-map-bg {
       position: absolute;
-      inset: 0;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       z-index: 1;
       pointer-events: none;
-      opacity: 0.72;
+      opacity: 0.9;
     }
 
     #network-map-bg svg {
@@ -128,10 +130,9 @@
       position: absolute;
       bottom: 24px;
       left: 28px;
-      z-index: 2;
-      background: rgba(255, 255, 255, 0.88);
-      backdrop-filter: blur(4px);
-      border: 1px solid rgba(44, 62, 80, 0.12);
+      z-index: 5;
+      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid rgba(44, 62, 80, 0.15);
       border-radius: 12px;
       padding: 10px 16px;
       display: flex;
@@ -140,7 +141,7 @@
       font-size: 0.85rem;
       font-weight: 500;
       color: #2c3e50;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
       pointer-events: none;
     }
 
@@ -157,11 +158,11 @@
       display: inline-block;
     }
 
-    /* CONTENUTO IN PRIMO PIANO (TRASPARENTE SULLA MAPPA) */
-    main {
+    /* CONTENUTO IN PRIMO PIANO (SENZA SFONDO BIANCO) */
+    .contact-foreground {
       position: relative;
       z-index: 3;
-      background: transparent !important;
+      background: none !important;
       padding: 45px 30px 55px 30px;
       box-sizing: border-box;
       max-width: 760px;
@@ -184,12 +185,12 @@
       margin-bottom: 15px;
     }
 
-    main h1 {
+    .contact-foreground h1 {
       color: #2c3e50;
-      font-size: 2.2rem;
+      font-size: 2.3rem;
       margin: 0;
       text-align: center;
-      text-shadow: 0 0 12px rgba(255, 255, 255, 0.95), 0 0 4px rgba(255, 255, 255, 0.95);
+      text-shadow: 0 0 14px #ffffff, 0 0 8px #ffffff, 0 0 4px #ffffff;
     }
 
     /* IMMAGINE FARFALLA */
@@ -202,14 +203,14 @@
       pointer-events: none;
     }
 
-    main p.subtitle {
+    .contact-foreground p.subtitle {
       color: #2c3e50;
-      font-weight: 500;
+      font-weight: 600;
       font-size: 1.12rem;
       line-height: 1.6;
       margin-bottom: 35px;
       max-width: 560px;
-      text-shadow: 0 0 10px rgba(255, 255, 255, 0.95), 0 0 4px rgba(255, 255, 255, 0.95);
+      text-shadow: 0 0 14px #ffffff, 0 0 8px #ffffff, 0 0 4px #ffffff;
     }
 
     /* BLOCCO CONTATTI */
@@ -233,8 +234,8 @@
       font-weight: bold;
       font-size: 1.05rem;
       transition: all 0.3s ease;
-      background-color: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(4px);
+      background-color: rgba(255, 255, 255, 0.92);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
     }
 
     .contact-card:hover {
@@ -242,7 +243,7 @@
       color: #ffffff;
       border-color: #2c3e50;
       transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(44, 62, 80, 0.18);
+      box-shadow: 0 6px 18px rgba(44, 62, 80, 0.22);
     }
 
     .contact-icon {
@@ -252,7 +253,7 @@
 
     /* RESPONSIVE PER SMARTPHONE */
     @media (max-width: 768px) {
-      main {
+      .contact-foreground {
         padding: 35px 22px 45px 22px;
       }
       .title-container {
@@ -327,7 +328,7 @@
   </div>
 
   <!-- CONTENUTO PRINCIPALE -->
-  <main>
+  <div class="contact-foreground">
     <div class="title-container">
       <h1>Get in Touch!</h1>
       <img src="contatti.png" alt="Contact Icon" class="contact-title-img">
@@ -348,7 +349,7 @@
         <span class="contact-icon">🔗</span> LinkedIn Profile
       </a>
     </div>
-  </main>
+  </div>
 </div>
 
 <footer>
@@ -357,7 +358,7 @@
 
 <script>
 (function() {
-  const HOME_COORDS = [13.7768, 45.6495]; // Trieste (lon, lat)
+  const HOME_COORDS = [13.7768, 45.6495]; // Trieste, Italy (lon, lat)
 
   const COUNTRY_CENTROIDS = {
     IT: [12.5, 42.8], US: [-98.5, 39.8], GB: [-2.5, 54.0], FR: [2.2, 46.2],
@@ -469,19 +470,21 @@
   function renderMap() {
     if (!worldGeoData) return;
     const container = document.getElementById("network-map-bg");
-    const width = container.clientWidth || window.innerWidth;
-    const height = container.clientHeight || window.innerHeight;
+    const width = container.offsetWidth || window.innerWidth || 1200;
+    const height = container.offsetHeight || (window.innerHeight - 140) || 700;
 
     d3.select(container).selectAll("*").remove();
 
     const svg = d3.select(container)
       .append("svg")
+      .attr("width", width)
+      .attr("height", height)
       .attr("viewBox", `0 0 ${width} ${height}`)
       .attr("preserveAspectRatio", "xMidYMid slice");
 
     const projection = d3.geoNaturalEarth1()
-      .scale(Math.max(width / 5.2, height / 2.7))
-      .translate([width / 2, height / 2 + 15]);
+      .scale(Math.max(width / 5.4, height / 2.8))
+      .translate([width / 2, height / 2 + 10]);
 
     const path = d3.geoPath().projection(projection);
     const graticule = d3.geoGraticule().step([30, 30]);
@@ -490,8 +493,8 @@
       .datum(graticule)
       .attr("d", path)
       .attr("fill", "none")
-      .attr("stroke", "#d6d3ce")
-      .attr("stroke-width", 0.6);
+      .attr("stroke", "#d2cec6")
+      .attr("stroke-width", 0.7);
 
     svg.append("g")
       .selectAll("path")
@@ -500,8 +503,8 @@
       .append("path")
       .attr("d", path)
       .attr("fill", "#ffffff")
-      .attr("stroke", "#dcd9d4")
-      .attr("stroke-width", 0.8);
+      .attr("stroke", "#c9c5bd")
+      .attr("stroke-width", 0.9);
 
     const homeXY = projection(HOME_COORDS);
 
@@ -520,10 +523,10 @@
         .attr("d", dCurve)
         .attr("fill", "none")
         .attr("stroke", node.type === "collab" ? "#1f8b4c" : "#c83784")
-        .attr("stroke-width", node.type === "collab" ? 2.2 : 1.7)
+        .attr("stroke-width", node.type === "collab" ? 2.4 : 1.9)
         .attr("stroke-dasharray", node.type === "collab" ? "none" : "6,4")
         .attr("stroke-linecap", "round")
-        .attr("opacity", 0.85);
+        .attr("opacity", 0.9);
     });
 
     const nodesGroup = svg.append("g");
@@ -534,10 +537,10 @@
       nodesGroup.append("circle")
         .attr("cx", xy[0])
         .attr("cy", xy[1])
-        .attr("r", 5.2)
+        .attr("r", 5.5)
         .attr("fill", node.type === "collab" ? "#1f8b4c" : "#c83784")
         .attr("stroke", "#ffffff")
-        .attr("stroke-width", 1.5);
+        .attr("stroke-width", 1.6);
     });
 
     // Punto centrale: Trieste, Italy (I am here)
@@ -545,14 +548,14 @@
       svg.append("circle")
         .attr("cx", homeXY[0])
         .attr("cy", homeXY[1])
-        .attr("r", 15)
+        .attr("r", 16)
         .attr("fill", "#1a66ff")
-        .attr("opacity", 0.18);
+        .attr("opacity", 0.2);
 
       svg.append("circle")
         .attr("cx", homeXY[0])
         .attr("cy", homeXY[1])
-        .attr("r", 7)
+        .attr("r", 7.5)
         .attr("fill", "#1a66ff")
         .attr("stroke", "#ffffff")
         .attr("stroke-width", 2);
@@ -573,7 +576,8 @@
       worldGeoData = topojson.feature(topology, topology.objects.countries);
       renderMap();
       fetchLiveAcademicNetwork();
-    });
+    })
+    .catch(err => console.error("Errore caricamento mappa:", err));
 
   window.addEventListener("resize", renderMap);
 })();
