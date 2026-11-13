@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PXE62W3QKL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PXE62W3QKL');
+  </script>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Ilaria Cunico</title>
+
+  <meta name="description" content="Contact Ilaria Cunico: Get in touch via email or LinkedIn for academic research and collaborations.">
+  <meta name="keywords" content="Ilaria Cunico, contact, email, LinkedIn, research collaboration">
+  <meta name="author" content="Ilaria Cunico">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contact — Ilaria Cunico">
+  <meta property="og:description" content="Get in touch with Ilaria Cunico via Email or LinkedIn.">
+  <meta property="og:url" content="https://icunico.github.io/contact.html">
+
+  <link rel="canonical" href="https://icunico.github.io/contact.html">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Librerie leggere per la mappa scientifica dinamica -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://unpkg.com/topojson-client@3"></script>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f8f7f5 !important;
+      overflow-x: hidden;
+    }
+
+    /* BARRA SUPERIORE */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: rgba(44, 62, 80, 0.92);
+      color: white;
+      padding: 10px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      min-height: 70px;
+    }
+
+    .header-profile-container {
+      display: flex;
+      align-items: center;
+    }
+
+    header img.profile-img {
+      width: 60px !important;
+      height: 60px !important;
+      min-width: 60px !important;
+      min-height: 60px !important;
+      border-radius: 50% !important;
+      object-fit: cover;
+      margin-right: 15px;
+      display: inline-block !important;
+      border: 2px solid #ffffff;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin-left: 25px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #1abc9c;
+    }
+
+    /* CONTENITORE PRINCIPALE CON MAPPA DI SFONDO */
+    .contact-wrapper {
+      position: relative;
+      width: 100%;
+      min-height: 82vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    #network-map-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+      opacity: 0.52;
+    }
+
+    #network-map-bg svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* LEGENDA MAPPA IN BASSO A SINISTRA */
+    .map-legend {
+      position: absolute;
+      bottom: 24px;
+      left: 28px;
+      z-index: 2;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(44, 62, 80, 0.12);
+      border-radius: 12px;
+      padding: 10px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #2c3e50;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+      pointer-events: none;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .legend-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    /* CONTENUTO IN PRIMO PIANO */
+    main {
+      position: relative;
+      z-index: 3;
+      background: rgba(255, 255, 255, 0.82);
+      backdrop-filter: blur(6px);
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.95);
+      box-shadow: 0 10px 35px rgba(44, 62, 80, 0.08);
+      padding: 45px 40px 55px 40px;
+      box-sizing: border-box;
+      max-width: 760px;
+      width: 90%;
+      margin: 40px auto;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* CONTENITORE INTESTAZIONE CENTRATO CON IMMAGINE A DESTRA */
+    .title-container {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    main h1 {
+      color: #2c3e50;
+      font-size: 2.2rem;
+      margin: 0;
+      text-align: center;
+    }
+
+    /* IMMAGINE FARFALLA */
+    .contact-title-img {
+      width: 240px;
+      height: 240px;
+      object-fit: contain;
+      position: absolute;
+      left: calc(50% + 145px);
+      pointer-events: none;
+    }
+
+    main p.subtitle {
+      color: #444444;
+      font-size: 1.12rem;
+      line-height: 1.6;
+      margin-bottom: 35px;
+      max-width: 560px;
+    }
+
+    /* BLOCCO CONTATTI */
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      width: 100%;
+      max-width: 460px;
+    }
+
+    .contact-card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #2c3e50;
+      border: 2px solid #2c3e50;
+      font-weight: bold;
+      font-size: 1.05rem;
+      transition: all 0.3s ease;
+      background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    .contact-card:hover {
+      background-color: #2c3e50;
+      color: #ffffff;
+      border-color: #2c3e50;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(44, 62, 80, 0.18);
+    }
+
+    .contact-icon {
+      font-size: 1.3rem;
+      margin-right: 12px;
+    }
+
+    /* RESPONSIVE PER SMARTPHONE */
+    @media (max-width: 768px) {
+      main {
+        padding: 35px 22px 45px 22px;
+      }
+      .title-container {
+        flex-direction: column;
+      }
+      .contact-title-img {
+        position: static;
+        width: 160px;
+        height: 160px;
+        margin-top: 10px;
+      }
+      .map-legend {
+        bottom: 12px;
+        left: 12px;
+        padding: 8px 12px;
+        font-size: 0.78rem;
+      }
+    }
+
+    /* BARRA INFERIORE */
+    footer {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      padding: 15px;
+      background-color: #2c3e50;
+      color: white;
+    }
+
+    footer a {
+      color: #1abc9c;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-profile-container">
+    <img src="profilo2.jpg" alt="Ilaria Cunico" class="profile-img">
+    <h1>Ilaria Cunico</h1>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="river_ecosystem.html">River Ecosystem</a></li>
+      <li><a href="marine_ecosystem.html">Marine Ecosystem</a></li>
+      <li><a href="contact.html" style="color: #1abc9c;">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="contact-wrapper">
+  <!-- MAPPA DI SFONDO DINAMICA -->
+  <div id="network-map-bg"></div>
+
+  <!-- LEGENDA -->
+  <div class="map-legend">
+    <div class="legend-item">
+      <span class="legend-dot" style="background: #1a66ff;"></span>
+      <span>I am here (Trieste)</span>
+    </div>
+    <div class="legend-item">
+      <span class="legend-dot" style="background: #1f8b4c;"></span>
+      <span>Collaborators</span>
+    </div>
+    <div class="legend-item">
+      <span class="legend-dot" style="background: #c83784;"></span>
+      <span>Citations</span>
+    </div>
+  </div>
+
+  <!-- CONTENUTO PRINCIPALE -->
+  <main>
+    <div class="title-container">
+      <h1>Get in Touch!</h1>
+      <img src="contatti.png" alt="Contact Icon" class="contact-title-img">
+    </div>
+
+    <p class="subtitle">
+      Let's connect! Feel free to reach out for research inquiries, international collaborations, or questions about my work.
+    </p>
+
+    <div class="contact-links">
+      <!-- EMAIL -->
+      <a href="mailto:icunico@ogs.it" class="contact-card">
+        <span class="contact-icon">✉️</span> Email: icunico@ogs.it
+      </a>
+
+      <!-- LINKEDIN -->
+      <a href="https://www.linkedin.com/in/ilaria-cunico-b8639a19b/?skipRedirect=true" target="_blank" rel="noopener noreferrer" class="contact-card">
+        <span class="contact-icon">🔗</span> LinkedIn Profile
+      </a>
+    </div>
+  </main>
+</div>
+
+<footer>
+  <p>&copy; 2026 Ilaria Cunico | <a href="contact.html">Contact</a></p>
+</footer>
+
+<script>
+(function() {
+  const HOME_COORDS = [13.7768, 45.6495]; // Trieste (lon, lat)
+
+  const COUNTRY_CENTROIDS = {
+    IT: [12.5, 42.8], US: [-98.5, 39.8], GB: [-2.5, 54.0], FR: [2.2, 46.2],
+    DE: [10.4, 51.1], ES: [-3.7, 40.4], CN: [104.1, 35.8], JP: [138.2, 36.2],
+    KR: [127.7, 35.9], MX: [-102.5, 23.6], CA: [-106.3, 56.1], BR: [-51.9, -14.2],
+    AU: [133.7, -25.2], IN: [78.9, 20.5], NL: [5.2, 52.1], CH: [8.2, 46.8],
+    NO: [8.4, 60.4], SE: [18.6, 60.1], PT: [-8.2, 39.3], GR: [21.8, 39.0],
+    TR: [35.2, 38.9], IR: [53.6, 32.4], NG: [8.6, 9.0], ZA: [22.9, -30.5]
+  };
+
+  let networkNodes = [
+    { lon: -89.4, lat: 43.0, type: "collab" },
+    { lon: 11.2,  lat: 44.5, type: "collab" },
+    { lon: -118.2, lat: 34.0, type: "cite" },
+    { lon: -122.3, lat: 47.6, type: "cite" },
+    { lon: -106.6, lat: 35.1, type: "cite" },
+    { lon: -99.1,  lat: 19.4, type: "cite" },
+    { lon: 8.5,    lat: 47.3, type: "cite" },
+    { lon: 3.4,    lat: 6.5,  type: "cite" },
+    { lon: 51.4,   lat: 35.7, type: "cite" },
+    { lon: 121.4,  lat: 31.2, type: "cite" },
+    { lon: 127.0,  lat: 37.5, type: "cite" },
+    { lon: 135.5,  lat: 34.7, type: "cite" },
+    { lon: 139.7,  lat: 35.7, type: "cite" }
+  ];
+
+  let worldGeoData = null;
+
+  async function fetchLiveAcademicNetwork() {
+    try {
+      const authorRes = await fetch("https://api.openalex.org/authors?search=Ilaria+Cunico&per-page=5");
+      if (!authorRes.ok) return;
+      const authorData = await authorRes.json();
+      if (!authorData.results || authorData.results.length === 0) return;
+
+      const author = authorData.results.find(a =>
+        (a.last_known_institutions || []).some(inst => inst.country_code === "IT")
+      ) || authorData.results[0];
+
+      const authorId = author.id;
+
+      const worksRes = await fetch(`https://api.openalex.org/works?filter=author.id:${authorId}&per-page=50`);
+      if (!worksRes.ok) return;
+      const worksData = await worksRes.json();
+
+      const liveNodesMap = new Map();
+
+      for (const work of (worksData.results || [])) {
+        for (const authorship of (work.authorships || [])) {
+          if (authorship.author && authorship.author.id === authorId) continue;
+          for (const inst of (authorship.institutions || [])) {
+            const coords = getInstitutionCoords(inst);
+            if (coords && !isNearTrieste(coords)) {
+              const key = `${coords[0].toFixed(1)},${coords[1].toFixed(1)}`;
+              liveNodesMap.set(key, { lon: coords[0], lat: coords[1], type: "collab" });
+            }
+          }
+        }
+      }
+
+      const citedWorks = (worksData.results || []).filter(w => w.cited_by_count > 0).slice(0, 10);
+      for (const cw of citedWorks) {
+        const cleanWorkId = cw.id.replace("https://openalex.org/", "");
+        const citingRes = await fetch(`https://api.openalex.org/works?filter=cites:${cleanWorkId}&per-page=25`);
+        if (!citingRes.ok) continue;
+        const citingData = await citingRes.json();
+
+        for (const cWork of (citingData.results || [])) {
+          for (const authorship of (cWork.authorships || [])) {
+            for (const inst of (authorship.institutions || [])) {
+              const coords = getInstitutionCoords(inst);
+              if (coords && !isNearTrieste(coords)) {
+                const key = `${coords[0].toFixed(1)},${coords[1].toFixed(1)}`;
+                if (!liveNodesMap.has(key)) {
+                  liveNodesMap.set(key, { lon: coords[0], lat: coords[1], type: "cite" });
+                }
+              }
+            }
+          }
+        }
+      }
+
+      if (liveNodesMap.size > 0) {
+        const merged = new Map();
+        networkNodes.forEach(n => merged.set(`${n.lon.toFixed(1)},${n.lat.toFixed(1)}`, n));
+        liveNodesMap.forEach((val, key) => merged.set(key, val));
+        networkNodes = Array.from(merged.values());
+        renderMap();
+      }
+    } catch (err) {
+      console.debug("OpenAlex live sync skipped:", err);
+    }
+  }
+
+  function getInstitutionCoords(inst) {
+    if (inst.geo && typeof inst.geo.longitude === "number" && typeof inst.geo.latitude === "number") {
+      return [inst.geo.longitude, inst.geo.latitude];
+    }
+    if (inst.country_code && COUNTRY_CENTROIDS[inst.country_code]) {
+      return COUNTRY_CENTROIDS[inst.country_code];
+    }
+    return null;
+  }
+
+  function isNearTrieste(coords) {
+    return Math.abs(coords[0] - HOME_COORDS[0]) < 1.2 && Math.abs(coords[1] - HOME_COORDS[1]) < 1.2;
+  }
+
+  function renderMap() {
+    if (!worldGeoData) return;
+    const container = document.getElementById("network-map-bg");
+    const width = container.clientWidth || window.innerWidth;
+    const height = container.clientHeight || window.innerHeight;
+
+    d3.select(container).selectAll("*").remove();
+
+    const svg = d3.select(container)
+      .append("svg")
+      .attr("viewBox", `0 0 ${width} ${height}`)
+      .attr("preserveAspectRatio", "xMidYMid slice");
+
+    const projection = d3.geoNaturalEarth1()
+      .scale(Math.max(width / 5.2, height / 2.7))
+      .translate([width / 2, height / 2 + 15]);
+
+    const path = d3.geoPath().projection(projection);
+    const graticule = d3.geoGraticule().step([30, 30]);
+
+    svg.append("path")
+      .datum(graticule)
+      .attr("d", path)
+      .attr("fill", "none")
+      .attr("stroke", "#d6d3ce")
+      .attr("stroke-width", 0.6);
+
+    svg.append("g")
+      .selectAll("path")
+      .data(worldGeoData.features)
+      .enter()
+      .append("path")
+      .attr("d", path)
+      .attr("fill", "#ffffff")
+      .attr("stroke", "#dcd9d4")
+      .attr("stroke-width", 0.8);
+
+    const homeXY = projection(HOME_COORDS);
+
+    const arcsGroup = svg.append("g");
+    networkNodes.forEach(node => {
+      const targetXY = projection([node.lon, node.lat]);
+      if (!targetXY || !homeXY) return;
+
+      const midX = (homeXY[0] + targetXY[0]) / 2;
+      const dist = Math.hypot(targetXY[0] - homeXY[0], targetXY[1] - homeXY[1]);
+      const midY = Math.min(homeXY[1], targetXY[1]) - dist * 0.22;
+
+      const dCurve = `M ${homeXY[0]},${homeXY[1]} Q ${midX},${midY} ${targetXY[0]},${targetXY[1]}`;
+
+      arcsGroup.append("path")
+        .attr("d", dCurve)
+        .attr("fill", "none")
+        .attr("stroke", node.type === "collab" ? "#1f8b4c" : "#c83784")
+        .attr("stroke-width", node.type === "collab" ? 2.2 : 1.7)
+        .attr("stroke-dasharray", node.type === "collab" ? "none" : "6,4")
+        .attr("stroke-linecap", "round")
+        .attr("opacity", 0.85);
+    });
+
+    const nodesGroup = svg.append("g");
+    networkNodes.forEach(node => {
+      const xy = projection([node.lon, node.lat]);
+      if (!xy) return;
+
+      nodesGroup.append("circle")
+        .attr("cx", xy[0])
+        .attr("cy", xy[1])
+        .attr("r", 5.2)
+        .attr("fill", node.type === "collab" ? "#1f8b4c" : "#c83784")
+        .attr("stroke", "#ffffff")
+        .attr("stroke-width", 1.5);
+    });
+
+    // Punto centrale: Trieste (I am here)
+    if (homeXY) {
+      svg.append("circle")
+        .attr("cx", homeXY[0])
+        .attr("cy", homeXY[1])
+        .attr("r", 15)
+        .attr("fill", "#1a66ff")
+        .attr("opacity", 0.18);
+
+      svg.append("circle")
+        .attr("cx", homeXY[0])
+        .attr("cy", homeXY[1])
+        .attr("r", 7)
+        .attr("fill", "#1a66ff")
+        .attr("stroke", "#ffffff")
+        .attr("stroke-width", 2);
+
+      svg.append("text")
+        .attr("x", homeXY[0] + 12)
+        .attr("y", homeXY[1] + 4)
+        .text("I am here")
+        .attr("font-size", "13px")
+        .attr("font-weight", "700")
+        .attr("fill", "#111111");
+    }
+  }
+
+  fetch("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json")
+    .then(res => res.json())
+    .then(topology => {
+      worldGeoData = topojson.feature(topology, topology.objects.countries);
+      renderMap();
+      fetchLiveAcademicNetwork();
+    });
+
+  window.addEventListener("resize", renderMap);
+})();
+</script>
+
+</body>
+</html>
