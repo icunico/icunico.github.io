@@ -114,7 +114,7 @@
       height: 100%;
       z-index: 1;
       pointer-events: none;
-      opacity: 0.52;
+      opacity: 0.72;
     }
 
     #network-map-bg svg {
@@ -157,16 +157,12 @@
       display: inline-block;
     }
 
-    /* CONTENUTO IN PRIMO PIANO */
+    /* CONTENUTO IN PRIMO PIANO (TRASPARENTE SULLA MAPPA) */
     main {
       position: relative;
       z-index: 3;
-      background: rgba(255, 255, 255, 0.82);
-      backdrop-filter: blur(6px);
-      border-radius: 18px;
-      border: 1px solid rgba(255, 255, 255, 0.95);
-      box-shadow: 0 10px 35px rgba(44, 62, 80, 0.08);
-      padding: 45px 40px 55px 40px;
+      background: transparent !important;
+      padding: 45px 30px 55px 30px;
       box-sizing: border-box;
       max-width: 760px;
       width: 90%;
@@ -193,6 +189,7 @@
       font-size: 2.2rem;
       margin: 0;
       text-align: center;
+      text-shadow: 0 0 12px rgba(255, 255, 255, 0.95), 0 0 4px rgba(255, 255, 255, 0.95);
     }
 
     /* IMMAGINE FARFALLA */
@@ -206,11 +203,13 @@
     }
 
     main p.subtitle {
-      color: #444444;
+      color: #2c3e50;
+      font-weight: 500;
       font-size: 1.12rem;
       line-height: 1.6;
       margin-bottom: 35px;
       max-width: 560px;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.95), 0 0 4px rgba(255, 255, 255, 0.95);
     }
 
     /* BLOCCO CONTATTI */
@@ -234,7 +233,8 @@
       font-weight: bold;
       font-size: 1.05rem;
       transition: all 0.3s ease;
-      background-color: rgba(255, 255, 255, 0.9);
+      background-color: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(4px);
     }
 
     .contact-card:hover {
